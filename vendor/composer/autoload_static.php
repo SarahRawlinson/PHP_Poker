@@ -4,17 +4,47 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52
+class ComposerStaticInit528e67353c67c122b01222ea6ae0ac43
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        'f83ed111c2f97a0449abf067f157f418' => __DIR__ . '/..' . '/pestphp/pest/src/Functions.php',
+        '7d2876738dc0328edeb8a103c76cd8e7' => __DIR__ . '/..' . '/pestphp/pest/src/Pest.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
+            'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Component\\String\\' => 25,
+            'Symfony\\Component\\Console\\' => 26,
+        ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
+            'Pest\\Plugin\\' => 12,
+            'Pest\\' => 5,
+        ),
+        'N' => 
+        array (
+            'NunoMaduro\\Collision\\' => 21,
         ),
         'D' => 
         array (
@@ -24,9 +54,61 @@ class ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
+        ),
+        'Symfony\\Polyfill\\Intl\\Grapheme\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Component\\String\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/string',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Pest\\Plugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pestphp/pest-plugin/src',
+        ),
+        'Pest\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pestphp/pest/src',
+        ),
+        'NunoMaduro\\Collision\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -40,6 +122,7 @@ class ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
@@ -671,9 +754,9 @@ class ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3091d80ab0dec8cba7e711d91dea7b52::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit528e67353c67c122b01222ea6ae0ac43::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit528e67353c67c122b01222ea6ae0ac43::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit528e67353c67c122b01222ea6ae0ac43::$classMap;
 
         }, null, ClassLoader::class);
     }
