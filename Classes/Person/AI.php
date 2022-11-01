@@ -1,7 +1,7 @@
 ﻿<?php
 
 //namespace Poker\Classes\Person;
-class Human implements IPerson
+class AI implements IPerson
 {
     private $name;
     public function __construct($name)
