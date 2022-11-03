@@ -6,5 +6,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "require": {
+        "twbs/bootstrap": "^5.2"
     }
 }
