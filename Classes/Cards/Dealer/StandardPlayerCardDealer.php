@@ -7,6 +7,13 @@ class StandardPlayerCardDealer implements IDealer
     public function __construct()
     {
         $this->deck = new Deck();
+        foreach (Suit::cases() as $suit)
+        {
+            foreach (Rank::cases() as $rank)
+            {
+                $this->deck[] = new StandardPlayingCard($rank, $suit);
+            }
+        }
     }
 
     /**
@@ -53,5 +60,6 @@ class StandardPlayerCardDealer implements IDealer
         $this->deck->array_merge($deck);
         $this->shuffleCards();
     }
+    
     
 }

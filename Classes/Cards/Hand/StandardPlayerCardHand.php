@@ -5,6 +5,7 @@ class StandardPlayerCardHand implements IHand
 
     private Deck $deck;
     
+
     public function getCards(): Deck
     {
         return $this->deck;

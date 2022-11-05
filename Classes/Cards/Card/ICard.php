@@ -2,6 +2,6 @@
 
 interface ICard
 {
-    public function getValue(array $hand): int;
+    public function getValue(IHand $hand): int;
     public function getName(): string;
 }
