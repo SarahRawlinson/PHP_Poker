@@ -1,7 +1,7 @@
 ﻿<?php
 
 include ("Junk\Number.php");
-include ("Classes\Person\IPerson.php");
-include ("Classes\Person\PlayerCreator.php");
-include ("Classes\Person\AI.php");
-include ("Classes\Person\Human.php");
+include("Classes\Player\IPerson.php");
+include("Classes\Player\PlayerCreator.php");
+include("Classes\Player\AI.php");
+include("Classes\Player\Human.php");
