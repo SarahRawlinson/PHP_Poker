@@ -1,5 +1,7 @@
 ﻿<?php
 
+use JetBrains\PhpStorm\Pure;
+
 class StandardPlayingCard implements ICard
 {
     private Rank $rank;
@@ -60,5 +62,21 @@ class StandardPlayingCard implements ICard
     public function getImage(): string
     {
         return $this->rank->name."_of_".$this->suit->name.".png";
+    }
+
+    /**
+     * @return string
+     */
+    #[Pure] public function __toString(): string
+    {
+        return $this->getName();
+    }
+
+    /**
+     * @return array
+     */
+    #[Pure] public function __debugInfo()
+    {
+        return [$this->getName()];
     }
 }

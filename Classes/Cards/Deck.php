@@ -5,9 +5,9 @@ class Deck extends ArrayObject
     /**
      * @param $key
      * @param $value
-     * @return Deck
+     * @return Deck|void
      */
-    #[ReturnTypeWillChange] public function offsetSet($key, $value) : Deck
+    #[ReturnTypeWillChange] public function offsetSet($key, $value)
     {
         if ($value instanceof ICard) return parent::offsetSet($key, $value);
         throw new \InvalidArgumentException('Value must be type ICard');
@@ -45,5 +45,12 @@ class Deck extends ArrayObject
         {
             throw new \InvalidArgumentException('ICard not found in Deck');
         }
+    }
+    
+    public function pop()
+    {
+        $card = parent::getArrayCopy()[0];
+        parent::offsetUnset(0);
+        return $card;
     }
 }

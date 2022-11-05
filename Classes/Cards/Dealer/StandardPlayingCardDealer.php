@@ -1,19 +1,15 @@
 ﻿<?php
 
-class StandardPlayerCardDealer implements IDealer
+class StandardPlayingCardDealer implements IDealer
 {
     private Deck $deck;
-    
+
+    /**
+     *
+     */
     public function __construct()
     {
-        $this->deck = new Deck();
-        foreach (Suit::cases() as $suit)
-        {
-            foreach (Rank::cases() as $rank)
-            {
-                $this->deck[] = new StandardPlayingCard($rank, $suit);
-            }
-        }
+        $this->deck = $this->createDeck();
     }
 
     /**
@@ -28,26 +24,26 @@ class StandardPlayerCardDealer implements IDealer
      * @param int $qty
      * @return Deck
      */
-    private function popCards(int $qty): Deck
+    public function popCards(int $qty): Deck
     {
         $deck = new Deck();
         for($i=0;$i<$qty;$i++)
         {
-            $deck->append(array_pop($this->deck));
+            $deck->append($this->deck->pop());
         }
         return $deck;
     }
 
     /**
      * @param PlayerGroup $playerGroup
+     * @param int $qty
      * @return void
      */
-    public function deal(PlayerGroup $playerGroup): void
+    public function deal(PlayerGroup $playerGroup, int $qty): void
     {
-        $v = 1;
         foreach ($playerGroup as $player)
         {
-            $player->giveCards($this->popCards($v));
+            $player->giveCards($this->popCards($qty));
         }
     }
 
@@ -60,6 +56,21 @@ class StandardPlayerCardDealer implements IDealer
         $this->deck->array_merge($deck);
         $this->shuffleCards();
     }
+
+    /**
+     * @return Deck
+     */
+    public function createDeck(): Deck
+    {
+        $deck = new Deck();
+        foreach (Suit::cases() as $suit) {
+            foreach (Rank::cases() as $rank) {
+                $deck[] = new StandardPlayingCard($rank, $suit);
+            }
+        }
+        return $deck;
+    }
     
-    
+
+
 }
