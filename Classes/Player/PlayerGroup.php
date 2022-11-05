@@ -1,6 +1,6 @@
 ﻿<?php
 
-class PlayerGroup
+class PlayerGroup extends ArrayObject
 {
     /**
      * @param $key

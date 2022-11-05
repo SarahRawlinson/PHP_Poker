@@ -23,7 +23,8 @@ class StandardPlayingCard implements ICard
     {
         if ($this->rank = Rank::Ace)
         {
-            return $this->rank->value;
+            //TODO
+            //workout how to give ace two values depending on Hand
         }
         return $this->rank->value;
     }
@@ -34,6 +35,14 @@ class StandardPlayingCard implements ICard
     public function getRank(): Rank
     {
         return $this->rank;
+    }
+
+    /**
+     * @return Suit
+     */
+    public function getSuit(): Suit
+    {
+        return $this->suit;
     }
 
     /**
