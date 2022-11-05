@@ -1,7 +1,6 @@
 ﻿<?php
 
 //namespace Poker\Classes\Player;
-use PhpParser\Node\Stmt\Case_;
 
 enum PlayerType
 {

@@ -3,6 +3,6 @@
 interface IDealer
 {
     public function shuffleCards();
-    public function deal();
+    public function deal(PlayerGroup $playerGroup);
     public function collectCards(Deck $deck);
 }
