@@ -2,7 +2,6 @@
 //https://pestphp.com/docs/expectations#expect-toBeCallable
 
 include_once ("Include.php");
-
 $objects = [
     [Rank::Ace, Suit::Diamonds],
     [Rank::Two, Suit::Diamonds],
@@ -60,7 +59,7 @@ $objects = [
     ];
 
 
-it("check name is string", function (StandardPlayingCard $card)
+test("check name is string", function (StandardPlayingCard $card)
 {
     expect($card->getName())->toBeString();
 })->with(function()
@@ -76,7 +75,25 @@ it("check name is string", function (StandardPlayingCard $card)
     return $deck;
 });
 
-it("check card in predicted cards", function (StandardPlayingCard $card)
+test("check image for file exists", function (StandardPlayingCard $card)
+{
+    $name = "assets/card_images/card_face/".$card->getImage();
+    if (!file_exists($name)) {echo $name."\n";}
+    expect(file_exists($name))->toBeTrue();
+})->with(function()
+{
+    $deck = [];
+    foreach (Suit::cases() as $suit)
+    {
+        foreach (Rank::cases() as $rank)
+        {
+            $deck[] = new StandardPlayingCard($rank, $suit);
+        }
+    }
+    return $deck;
+});
+
+test("check card in predicted cards", function (StandardPlayingCard $card)
 {
     GLOBAL $objects;
     expect($objects)->toContain([$card->getRank(), $card->getSuit()]);

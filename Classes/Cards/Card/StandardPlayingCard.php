@@ -59,6 +59,6 @@ class StandardPlayingCard implements ICard
      */
     public function getImage(): string
     {
-        return $this->rank->name."_of_".$this->suit->name."png";
+        return $this->rank->name."_of_".$this->suit->name.".png";
     }
 }
