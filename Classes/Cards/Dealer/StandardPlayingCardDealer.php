@@ -17,10 +17,10 @@ class StandardPlayingCardDealer implements IDealer
      */
     public function shuffleCards(): void
     {
-        echo $this->deck;
+        //echo $this->deck;
         //$array = $this->deck->getArrayCopy();
         $this->deck = $this->deck->randomize();
-        echo $this->deck;
+        //echo $this->deck;
     }
 
     /**
@@ -63,11 +63,11 @@ class StandardPlayingCardDealer implements IDealer
     /**
      * @return Deck
      */
-    public function createDeck(): Deck
+    public static function createDeck(): Deck
     {
         $deck = new Deck();
-        foreach (Suit::cases() as $suit) {
-            foreach (Rank::cases() as $rank) {
+        foreach (SuitEnum::cases() as $suit) {
+            foreach (RankEnum::cases() as $rank) {
                 $deck[] = new StandardPlayingCard($rank, $suit);
             }
         }

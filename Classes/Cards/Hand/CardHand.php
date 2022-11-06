@@ -1,9 +1,10 @@
 ﻿<?php
 
-class StandardPlayerCardHand implements IHand
+abstract class CardHand implements IHand
 {
 
     private Deck $deck;
+    
 
     /**
      * @param Deck $deck
@@ -55,11 +56,20 @@ class StandardPlayerCardHand implements IHand
     }
 
     /**
-     * @return void
+     * @return int
      * need to work on
      */
-    public function getValue(): void
+    public function getValue(): int
     {
-        // TODO: Implement getValue() method.
+        return $this->workOutHand();
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        // TODO: Implement getName() method.
+        return "";
     }
 }

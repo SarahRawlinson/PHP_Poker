@@ -1,6 +1,6 @@
 ﻿<?php
 
-enum Rank: int
+enum RankEnum: int
 {
     case Ace = 14;
     case Two = 2;

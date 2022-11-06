@@ -1,6 +1,6 @@
 ﻿<?php
 
-enum Suit
+enum SuitEnum
 {
     case Hearts;
     case Spades;

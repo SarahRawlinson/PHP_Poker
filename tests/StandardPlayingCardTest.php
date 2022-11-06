@@ -2,58 +2,58 @@
 
 include_once ("Include.php");
 $objects = [
-    [Rank::Ace, Suit::Diamonds],
-    [Rank::Two, Suit::Diamonds],
-    [Rank::Three, Suit::Diamonds],
-    [Rank::Four, Suit::Diamonds],
-    [Rank::Five, Suit::Diamonds],
-    [Rank::Six, Suit::Diamonds],
-    [Rank::Seven, Suit::Diamonds],
-    [Rank::Eight, Suit::Diamonds],
-    [Rank::Nine, Suit::Diamonds],
-    [Rank::Ten, Suit::Diamonds],
-    [Rank::Jack, Suit::Diamonds],
-    [Rank::Queen, Suit::Diamonds],
-    [Rank::King, Suit::Diamonds],
-    [Rank::Ace, Suit::Hearts],
-    [Rank::Two, Suit::Hearts],
-    [Rank::Three, Suit::Hearts],
-    [Rank::Four, Suit::Hearts],
-    [Rank::Five, Suit::Hearts],
-    [Rank::Six, Suit::Hearts],
-    [Rank::Seven, Suit::Hearts],
-    [Rank::Eight, Suit::Hearts],
-    [Rank::Nine, Suit::Hearts],
-    [Rank::Ten, Suit::Hearts],
-    [Rank::Jack, Suit::Hearts],
-    [Rank::Queen, Suit::Hearts],
-    [Rank::King, Suit::Hearts],
-    [Rank::Ace, Suit::Spades],
-    [Rank::Two, Suit::Spades],
-    [Rank::Three, Suit::Spades],
-    [Rank::Four, Suit::Spades],
-    [Rank::Five, Suit::Spades],
-    [Rank::Six, Suit::Spades],
-    [Rank::Seven, Suit::Spades],
-    [Rank::Eight, Suit::Spades],
-    [Rank::Nine, Suit::Spades],
-    [Rank::Ten, Suit::Spades],
-    [Rank::Jack, Suit::Spades],
-    [Rank::Queen, Suit::Spades],
-    [Rank::King, Suit::Spades],
-    [Rank::Ace, Suit::Clubs],
-    [Rank::Two, Suit::Clubs],
-    [Rank::Three, Suit::Clubs],
-    [Rank::Four, Suit::Clubs],
-    [Rank::Five, Suit::Clubs],
-    [Rank::Six, Suit::Clubs],
-    [Rank::Seven, Suit::Clubs],
-    [Rank::Eight, Suit::Clubs],
-    [Rank::Nine, Suit::Clubs],
-    [Rank::Ten, Suit::Clubs],
-    [Rank::Jack, Suit::Clubs],
-    [Rank::Queen, Suit::Clubs],
-    [Rank::King, Suit::Clubs]
+    [RankEnum::Ace, SuitEnum::Diamonds],
+    [RankEnum::Two, SuitEnum::Diamonds],
+    [RankEnum::Three, SuitEnum::Diamonds],
+    [RankEnum::Four, SuitEnum::Diamonds],
+    [RankEnum::Five, SuitEnum::Diamonds],
+    [RankEnum::Six, SuitEnum::Diamonds],
+    [RankEnum::Seven, SuitEnum::Diamonds],
+    [RankEnum::Eight, SuitEnum::Diamonds],
+    [RankEnum::Nine, SuitEnum::Diamonds],
+    [RankEnum::Ten, SuitEnum::Diamonds],
+    [RankEnum::Jack, SuitEnum::Diamonds],
+    [RankEnum::Queen, SuitEnum::Diamonds],
+    [RankEnum::King, SuitEnum::Diamonds],
+    [RankEnum::Ace, SuitEnum::Hearts],
+    [RankEnum::Two, SuitEnum::Hearts],
+    [RankEnum::Three, SuitEnum::Hearts],
+    [RankEnum::Four, SuitEnum::Hearts],
+    [RankEnum::Five, SuitEnum::Hearts],
+    [RankEnum::Six, SuitEnum::Hearts],
+    [RankEnum::Seven, SuitEnum::Hearts],
+    [RankEnum::Eight, SuitEnum::Hearts],
+    [RankEnum::Nine, SuitEnum::Hearts],
+    [RankEnum::Ten, SuitEnum::Hearts],
+    [RankEnum::Jack, SuitEnum::Hearts],
+    [RankEnum::Queen, SuitEnum::Hearts],
+    [RankEnum::King, SuitEnum::Hearts],
+    [RankEnum::Ace, SuitEnum::Spades],
+    [RankEnum::Two, SuitEnum::Spades],
+    [RankEnum::Three, SuitEnum::Spades],
+    [RankEnum::Four, SuitEnum::Spades],
+    [RankEnum::Five, SuitEnum::Spades],
+    [RankEnum::Six, SuitEnum::Spades],
+    [RankEnum::Seven, SuitEnum::Spades],
+    [RankEnum::Eight, SuitEnum::Spades],
+    [RankEnum::Nine, SuitEnum::Spades],
+    [RankEnum::Ten, SuitEnum::Spades],
+    [RankEnum::Jack, SuitEnum::Spades],
+    [RankEnum::Queen, SuitEnum::Spades],
+    [RankEnum::King, SuitEnum::Spades],
+    [RankEnum::Ace, SuitEnum::Clubs],
+    [RankEnum::Two, SuitEnum::Clubs],
+    [RankEnum::Three, SuitEnum::Clubs],
+    [RankEnum::Four, SuitEnum::Clubs],
+    [RankEnum::Five, SuitEnum::Clubs],
+    [RankEnum::Six, SuitEnum::Clubs],
+    [RankEnum::Seven, SuitEnum::Clubs],
+    [RankEnum::Eight, SuitEnum::Clubs],
+    [RankEnum::Nine, SuitEnum::Clubs],
+    [RankEnum::Ten, SuitEnum::Clubs],
+    [RankEnum::Jack, SuitEnum::Clubs],
+    [RankEnum::Queen, SuitEnum::Clubs],
+    [RankEnum::King, SuitEnum::Clubs]
     
     ];
 
@@ -64,9 +64,9 @@ test("check name is string", function (StandardPlayingCard $card)
 })->with(function()
 {
     $deck = [];
-    foreach (Suit::cases() as $suit)
+    foreach (SuitEnum::cases() as $suit)
     {
-        foreach (Rank::cases() as $rank)
+        foreach (RankEnum::cases() as $rank)
         {
             $deck[] = new StandardPlayingCard($rank, $suit);
         }
@@ -82,9 +82,9 @@ test("check image for file exists", function (StandardPlayingCard $card)
 })->with(function()
 {
     $deck = [];
-    foreach (Suit::cases() as $suit)
+    foreach (SuitEnum::cases() as $suit)
     {
-        foreach (Rank::cases() as $rank)
+        foreach (RankEnum::cases() as $rank)
         {
             $deck[] = new StandardPlayingCard($rank, $suit);
         }
@@ -99,9 +99,9 @@ test("check card in predicted cards", function (StandardPlayingCard $card)
 })->with(function()
 {
     $deck = [];
-    foreach (Suit::cases() as $suit)
+    foreach (SuitEnum::cases() as $suit)
     {
-        foreach (Rank::cases() as $rank)
+        foreach (RankEnum::cases() as $rank)
         {
             $deck[] = new StandardPlayingCard($rank, $suit);
         }

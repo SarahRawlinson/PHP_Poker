@@ -4,14 +4,14 @@ use JetBrains\PhpStorm\Pure;
 
 class StandardPlayingCard implements ICard
 {
-    private Rank $rank;
-    private Suit $suit;
+    private RankEnum $rank;
+    private SuitEnum $suit;
 
     /**
-     * @param Rank $rank
-     * @param Suit $suit
+     * @param RankEnum $rank
+     * @param SuitEnum $suit
      */
-    public function __construct(Rank $rank, Suit $suit)
+    public function __construct(RankEnum $rank, SuitEnum $suit)
     {
         $this->suit = $suit;
         $this->rank = $rank;
@@ -23,7 +23,7 @@ class StandardPlayingCard implements ICard
      */
     public function getValue(IHand $hand): int
     {
-        if ($this->rank = Rank::Ace)
+        if ($this->rank = RankEnum::Ace)
         {
             //TODO
             //workout how to give ace two values depending on Hand
@@ -32,17 +32,17 @@ class StandardPlayingCard implements ICard
     }
 
     /**
-     * @return Rank
+     * @return RankEnum
      */
-    public function getRank(): Rank
+    public function getRank(): RankEnum
     {
         return $this->rank;
     }
 
     /**
-     * @return Suit
+     * @return SuitEnum
      */
-    public function getSuit(): Suit
+    public function getSuit(): SuitEnum
     {
         return $this->suit;
     }
