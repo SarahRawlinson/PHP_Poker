@@ -13,7 +13,11 @@ test('check 7 matching suit returns flush true', function () {
             new StandardPlayingCard(RankEnum::Seven, SuitEnum::Clubs)
         ]
     );
-    expect(Flush::isFlush($deck)[0])->toBeTrue();
+    $flush = Flush::isFlush($deck);
+    expect($flush[0])->toBeTrue()
+        ->and(count($flush[1]))->toEqual(1)
+        ->and(count($flush[1][0]))->toEqual(7)
+        ->and($flush[1][0][0])->toBeInstanceOf(StandardPlayingCard::class);;
 
 });
 
@@ -27,7 +31,11 @@ test('check 5 of same suit continuous returns straight flush true', function () 
             new StandardPlayingCard(RankEnum::Five, SuitEnum::Clubs)
         ]
     );
-    expect(Flush::isStraightFlush($deck)[0])->toBeTrue();
+    $flush = Flush::isStraightFlush($deck);
+    expect($flush[0])->toBeTrue()
+        ->and(count($flush[1]))->toEqual(1)
+        ->and(count($flush[1][0]))->toEqual(5)
+        ->and($flush[1][0][0])->toBeInstanceOf(StandardPlayingCard::class);
 
 });
 
@@ -41,7 +49,11 @@ test('check royal flush cards return royal flush true', function () {
             new StandardPlayingCard(RankEnum::Ten, SuitEnum::Clubs)
         ]
     );
-    expect(Flush::isRoyalFlush($deck)[0])->toBeTrue();
+    $flush = Flush::isRoyalFlush($deck);
+    expect($flush[0])->toBeTrue()
+        ->and(count($flush[1]))->toEqual(1)
+        ->and(count($flush[1][0]))->toEqual(5)
+        ->and($flush[1][0][0])->toBeInstanceOf(StandardPlayingCard::class);
 
 });
 
@@ -71,7 +83,11 @@ test('check 5 matching suit returns flush true', function () {
             new StandardPlayingCard(RankEnum::Seven, SuitEnum::Clubs)
         ]
     );
-    expect(Flush::isFlush($deck)[0])->toBeTrue();
+    $flush = Flush::isFlush($deck);
+    expect($flush[0])->toBeTrue()
+        ->and(count($flush[1]))->toEqual(1)
+        ->and(count($flush[1][0]))->toEqual(5)
+        ->and($flush[1][0][0])->toBeInstanceOf(StandardPlayingCard::class);
 
 });
 

@@ -39,7 +39,6 @@ class Flush
                 }
                 $straightFlushes[] = $newDeck;
             }
-//            $straightFlushes = new Deck(Straight::isStraight($cardsDeck)[1]);
         }
         return [count($straightFlushes)>0,$straightFlushes];
     }
@@ -52,7 +51,7 @@ class Flush
     {
         $straightFlushes = self::isStraightFlush($deck);
         $cardsFound = false;
-        $royalFlushDeck = new Deck();
+        $royalFlushes = [];
         if ($straightFlushes[0])
         {
             foreach ($straightFlushes[1] as $straightFlush)
@@ -74,17 +73,17 @@ class Flush
                     {
                         throw new \InvalidArgumentException('array must only contain type Standard Playing Card');
                     }
-                    if ($kingFoundInStraight && $aceFoundInStraight)
-                    {
-                        $cardsFound = true;
-                        $royalFlushDeck = $straightFlush;
-                    }
+                    
+                }
+                if ($kingFoundInStraight && $aceFoundInStraight)
+                {
+                    $cardsFound = true;
+                    $royalFlushes[] = $straightFlush;
                 }
                                
             }
         }
-        print_r([$cardsFound, $royalFlushDeck]); 
-        return [$cardsFound, $royalFlushDeck];
+        return [$cardsFound, $royalFlushes];
     }
     
     
