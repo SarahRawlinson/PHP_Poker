@@ -1,5 +1,5 @@
 ﻿<?php
-include_once ("Include.php");
+include_once("Include.php");
 
 test('check Hand get cards returns Deck', function (){
     $deck = new Deck([

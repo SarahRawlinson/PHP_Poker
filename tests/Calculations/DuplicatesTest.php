@@ -1,5 +1,5 @@
 ﻿<?php
-include_once ("Include.php");
+include_once("Include.php");
 
 test('test rank duplicates returns true in log', function () {
     $deck = StandardPlayingCardDealer::createDeck();

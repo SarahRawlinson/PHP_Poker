@@ -1,5 +1,5 @@
 ﻿<?php
-include_once ("Include.php");
+include_once("Include.php");
 
 test('check low straight returns true', function () {
     $deck = new Deck(

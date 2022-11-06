@@ -1,7 +1,7 @@
 ﻿<?php
 //https://pestphp.com/docs/expectations#expect-toBeCallable
 
-include_once ("Include.php");
+include_once("Include.php");
 
 $objects = 
     [["bob", PlayerType::AI],

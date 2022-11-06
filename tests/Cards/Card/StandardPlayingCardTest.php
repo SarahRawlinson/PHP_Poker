@@ -1,7 +1,7 @@
 ﻿<?php
 
-include_once ("Include.php");
-$objects = [
+include_once("Include.php");
+$expectedCards = [
     [RankEnum::Ace, SuitEnum::Diamonds],
     [RankEnum::Two, SuitEnum::Diamonds],
     [RankEnum::Three, SuitEnum::Diamonds],
@@ -94,8 +94,9 @@ test("check image for file exists", function (StandardPlayingCard $card)
 
 test("check card in predicted cards", function (StandardPlayingCard $card)
 {
-    GLOBAL $objects;
-    expect($objects)->toContain([$card->getRank(), $card->getSuit()]);
+    GLOBAL $expectedCards;
+    print_r($expectedCards);
+    expect($expectedCards)->toContain([$card->getRank(), $card->getSuit()]);
 })->with(function()
 {
     $deck = [];

@@ -1,5 +1,5 @@
 ﻿<?php
-include_once ("Include.php");
+include_once("Include.php");
 
 test('check Deck throws exception when give non-card object', function () {
     $deck = new Deck();

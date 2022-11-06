@@ -1,5 +1,5 @@
 ﻿<?php
-include_once ("Include.php");
+include_once("Include.php");
 
 test('check 7 matching suit returns flush true', function () {
     $deck = new Deck(
