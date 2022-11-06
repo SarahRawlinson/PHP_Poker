@@ -17,7 +17,10 @@ class StandardPlayingCardDealer implements IDealer
      */
     public function shuffleCards(): void
     {
-        shuffle($this->deck);
+        echo $this->deck;
+        //$array = $this->deck->getArrayCopy();
+        $this->deck = $this->deck->randomize();
+        echo $this->deck;
     }
 
     /**
@@ -70,7 +73,13 @@ class StandardPlayingCardDealer implements IDealer
         }
         return $deck;
     }
-    
 
+    /**
+     * @return Deck
+     */
+    public function getDeck(): Deck
+    {
+        return $this->deck;
+    }
 
 }

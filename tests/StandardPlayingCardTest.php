@@ -1,5 +1,4 @@
 ﻿<?php
-//https://pestphp.com/docs/expectations#expect-toBeCallable
 
 include_once ("Include.php");
 $objects = [

@@ -1,6 +1,4 @@
 ﻿<?php
-//use Poker\Classes\Player\PlayerCreator;
-//use Poker\Classes\Player\PlayerType;
 //https://pestphp.com/docs/expectations#expect-toBeCallable
 
 include_once ("Include.php");

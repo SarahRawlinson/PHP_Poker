@@ -4,29 +4,61 @@ class StandardPlayerCardHand implements IHand
 {
 
     private Deck $deck;
-    
 
+    /**
+     * @param Deck $deck
+     */
+    public function __construct(Deck $deck = new Deck())
+    {
+        $this->deck = $deck;
+    }
+
+
+    /**
+     * @return Deck
+     */
     public function getCards(): Deck
     {
         return $this->deck;
     }
 
-    public function addCards(Deck $cards)
+    /**
+     * @param Deck $cards
+     * @return void
+     */
+    public function addCards(Deck $cards): void
     {
         $this->deck->array_merge($cards);
     }
 
-    public function removeCard(ICard $card)
+    /**
+     * @param ICard $card
+     * @return ICard
+     */
+    public function removeCard(ICard $card): ICard
     {
-        $this->deck->remove_card($card);
+        return $this->deck->remove_card($card);
     }
 
-    public function clearCards()
+    /**
+     * @return Deck
+     */
+    public function clearCards(): Deck
     {
-        $this->deck[] = new Deck();
+        $deck = new Deck();
+        echo $this->deck->count()-1;
+        for ($i = $this->deck->count() -1; $i >= 0; $i--)
+        {
+            $deck->append($this->removeCard($this->deck[$i]));
+        }
+        return $deck;
     }
 
-    public function getValue()
+    /**
+     * @return void
+     * need to work on
+     */
+    public function getValue(): void
     {
         // TODO: Implement getValue() method.
     }
