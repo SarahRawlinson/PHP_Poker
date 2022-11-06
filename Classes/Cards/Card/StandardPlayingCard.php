@@ -73,4 +73,25 @@ class StandardPlayingCard implements ICard
     {
         return [$this->getName()];
     }
+
+    /**
+     * @param StandardPlayingCard $card1
+     * @param StandardPlayingCard $card2
+     * @return int
+     */
+    #[Pure] public static function compareRank(StandardPlayingCard $card1, StandardPlayingCard $card2): int
+    {
+        return $card1->getRank()->value <=> $card2->getRank()->value;
+    }
+
+    /**
+     * @param Deck $deck
+     * @return Deck
+     */
+    public static function sort(Deck $deck): Deck
+    {
+        $copy = $deck->getArrayCopy();
+        usort($copy, function ($a, $b) {return self::compareRank($a, $b);});
+        return new Deck($copy);
+    }
 }

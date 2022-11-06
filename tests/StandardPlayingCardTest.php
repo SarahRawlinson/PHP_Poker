@@ -108,3 +108,20 @@ test("check card in predicted cards", function (StandardPlayingCard $card)
     }
     return $deck;
 });
+
+test("check sort", function ()
+{
+    $deck = new Deck();
+    foreach (SuitEnum::cases() as $suit)
+    {
+        foreach (RankEnum::cases() as $rank)
+        {
+            $deck->append(new StandardPlayingCard($rank, $suit));
+        }
+    }
+    $sortedDeck = StandardPlayingCard::sort($deck);
+    expect($sortedDeck)->toBeInstanceOf(Deck::class)
+        ->and($sortedDeck[0])->toBeInstanceOf(StandardPlayingCard::class)
+        ->and($sortedDeck[0]->getRank())->toEqual(RankEnum::Two)
+        ->and($sortedDeck[count($sortedDeck)-1]->getRank())->toEqual(RankEnum::Ace);
+});
