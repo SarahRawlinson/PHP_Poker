@@ -18,16 +18,10 @@ class StandardPlayingCard implements ICard
     }
 
     /**
-     * @param IHand $hand
      * @return int
      */
-    public function getValue(IHand $hand): int
+    public function getValue(): int
     {
-        if ($this->rank = RankEnum::Ace)
-        {
-            //TODO
-            //workout how to give ace two values depending on Hand
-        }
         return $this->rank->value;
     }
 
