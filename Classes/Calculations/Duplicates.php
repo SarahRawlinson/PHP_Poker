@@ -22,7 +22,13 @@ class Duplicates
         $ranks = [];
         foreach ($deck as $card)
         {
-            $ranks[$card->getRank()->name][] = $card;
+            if ($card instanceof StandardPlayingCard)
+            {
+                $ranks[$card->getRank()->name][] = $card;
+            }
+            else{
+                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+            }            
         }
         return self::DuplicateLog($ranks);
     }
@@ -48,8 +54,14 @@ class Duplicates
         $ranks = [];
         foreach ($deck as $card)
         {
+            if ($card instanceof StandardPlayingCard) 
+            {
+                $ranks[$card->getSuit()->name][] = $card;
+            }
+            else{
+                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+            }           
             
-            $ranks[$card->getSuit()->name][] = $card;
         }
         return self::DuplicateLog($ranks);
     }

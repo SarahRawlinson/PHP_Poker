@@ -18,3 +18,4 @@ include_once("Classes\Cards\Hand\PokerHandEnum.php");
 include_once ("Classes\Cards\Deck.php");
 include_once ("Classes\Calculations\Duplicates.php");
 include_once("Classes\Calculations\Straight.php");
+include_once("Classes\Calculations\Flush.php");

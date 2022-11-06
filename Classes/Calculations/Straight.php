@@ -12,11 +12,17 @@ class Straight
         $array = [];
         foreach ($deck as $card)
         {
-            if ($card->getRank() == RankEnum::Ace)
+            if ($card instanceof StandardPlayingCard)
             {
-                $array[1][] = $card;
+                if ($card->getRank() == RankEnum::Ace)
+                {
+                    $array[1][] = $card;
+                }
+                $array[$card->getValue()][] = $card;
             }
-            $array[$card->getValue()][] = $card;
+            else{
+                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+            }            
         }
         $continuous = 0;
         $straights = [];

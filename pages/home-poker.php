@@ -10,9 +10,13 @@
     <title>Document</title>
 </head>
 <body>
-<div class="m-5 p-4">
+<div class="container-fluid">
     <div class="m-0">
         <h2>hello</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">.col-sm-4</div>
+        <div class="col-sm-8">.col-sm-8</div>
     </div>
     <div class="m-0">
         <small class="fw-normal fst-italic">this is my poker page</small>
