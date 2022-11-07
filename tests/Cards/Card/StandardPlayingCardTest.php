@@ -95,7 +95,6 @@ test("check image for file exists", function (StandardPlayingCard $card)
 test("check card in predicted cards", function (StandardPlayingCard $card)
 {
     GLOBAL $expectedCards;
-    print_r($expectedCards);
     expect($expectedCards)->toContain([$card->getRank(), $card->getSuit()]);
 })->with(function()
 {

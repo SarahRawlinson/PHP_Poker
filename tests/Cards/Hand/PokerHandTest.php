@@ -54,3 +54,24 @@ test('check Hand clear cards', function (){
         ->and(count($cards1))->toEqual(2)
         ->and(count($cards2))->toEqual(0);
 });
+
+test('check workout hand returns correct', function ($expect, $hand){
+
+    $pokerHand = new PokerHand($hand);
+    
+    expect(PokerHandEnum::tryfrom($pokerHand->workOutHand()))->toEqual($expect);
+})->with(function ()
+{
+    return [
+        [PokerHandEnum::HighCard, CardExamples::getHighCard()],
+        [PokerHandEnum::Pair, CardExamples::getPair()],
+        [PokerHandEnum::Two_Pair, CardExamples::getTwoPair()],
+        [PokerHandEnum::Three_Of_A_Kind, CardExamples::getThreeOfAKind()],
+        [PokerHandEnum::Straight, CardExamples::getStraight()],
+        [PokerHandEnum::Flush, CardExamples::getFlush()],
+        [PokerHandEnum::Full_House, CardExamples::getFourFullHouse()],
+        [PokerHandEnum::Four_Of_A_Kind, CardExamples::getFourOfAKind()],
+        [PokerHandEnum::Straight_Flush, CardExamples::getStraightFlush()],
+        [PokerHandEnum::Royal_Flush, CardExamples::getRoyalFlush()]
+        ];
+});

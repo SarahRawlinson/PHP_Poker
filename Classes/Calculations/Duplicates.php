@@ -93,7 +93,60 @@ class Duplicates
             $returnLog[$key]['duplicate number'] = $num - 1;
             $returnLog[$key]['array'] = $value;
         }
-        //echo print_r($returnLog);
         return ['duplicate found' => $duplicate, 'log' => $returnLog];
+    }
+
+    /**
+     * @param $log
+     * @return array
+     */
+    public static function isFullHouse($log): array
+    {
+        $newTwoCards = [];
+        $newThreeCards = [];
+        $foundThree = false;
+        $foundTwo = false;
+        foreach ($log['log'] as $cards) {
+            if ($cards['duplicate number'] == 2) {
+                $foundThree = true;
+                $newThreeCards[] = $cards['array'];
+            }
+
+            if ($cards['duplicate number'] == 1) {
+                $foundTwo = true;
+                $newTwoCards[] = $cards['array'];
+            }
+        }
+        $found = false;
+        $newLog = [];
+        if ($foundThree && $foundTwo) {
+            $found = true;
+            foreach ($newThreeCards as $three) {
+                foreach ($newTwoCards as $two) {
+                    $newLog[] = array_merge($three, $two);
+                }
+            }
+        }
+        return [$found, $newLog];
+    }
+
+    /**
+     * @param $log
+     * @param $qty
+     * @return array
+     */
+    public static function isOfAKind($log, $qty): array
+    {
+        $newLog = [];
+        $found = false;
+        foreach ($log['log'] as $cards)
+        {
+            if ($cards['duplicate number'] == $qty -1)
+            {
+                $found = true;
+                $newLog[] = $cards['array'];
+            }
+        }
+        return [$found, $newLog, count($newLog)];
     }
 }

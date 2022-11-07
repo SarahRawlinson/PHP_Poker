@@ -3,7 +3,7 @@
 
 include_once("Include.php");
 
-$objects = 
+$players = 
     [["bob", PlayerType::AI],
     ["bob", PlayerType::Human]];
 
@@ -11,16 +11,16 @@ $objects =
 test("check creation", function ($name, $type)
 {
     $this->assertSame(PlayerCreator::CreatePlayer($type, $name)->getName(), $name);
-})->with($objects);
+})->with($players);
 
 
 test("check players instance of IPerson", function ($name, $type)
 {
     expect(PlayerCreator::CreatePlayer($type, $name))->toBeInstanceOf(IPerson::class);
-})->with($objects);
+})->with($players);
 
 
 test("check name is string", function ($name, $type)
 {
     expect(PlayerCreator::CreatePlayer($type, $name)->getName())->toBeString();
-})->with($objects);
+})->with($players);

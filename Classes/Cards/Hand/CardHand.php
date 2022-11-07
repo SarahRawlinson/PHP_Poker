@@ -3,7 +3,7 @@
 abstract class CardHand implements IHand
 {
 
-    private Deck $deck;
+    protected Deck $deck;
     
 
     /**

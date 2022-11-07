@@ -1,6 +1,5 @@
 ﻿<?php
-
-//namespace Poker\Classes\Player;
+//TODO: Test
 class Human implements IPerson
 {
     private string $name = "";

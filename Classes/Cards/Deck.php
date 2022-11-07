@@ -109,6 +109,6 @@ class Deck extends ArrayObject
         echo "couldn't shuffle";
         return $this;
     }
-    
-    
+
+
 }

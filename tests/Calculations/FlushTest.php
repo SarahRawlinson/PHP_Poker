@@ -106,3 +106,19 @@ test('check 4 matching suit returns flush false', function () {
     expect(Flush::isFlush($deck)[0])->not()->toBeTrue();
 
 });
+
+test('check Royal Flush Example returns Royal Flush true', function () {
+    $deck = new Deck(
+        CardExamples::getRoyalFlush()
+    );
+    expect(Flush::isRoyalFlush($deck)[0])->toBeTrue();
+
+});
+
+test('check High Card Example returns Flush false', function () {
+    $deck = new Deck(
+        CardExamples::getHighCard()
+    );
+    expect(Flush::isFlush($deck)[0])->not()->toBeTrue();
+
+});
