@@ -1,0 +1,7 @@
+﻿{
+  "name": "PHP_Poker",
+  "version": "1.0.0",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
