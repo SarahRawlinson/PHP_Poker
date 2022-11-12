@@ -5,11 +5,13 @@
     foreach (CardExamples::getRoyalFlush() as $i=>$card):
     ?>
         <img src="<?=$card->getImagePath()?>" alt="stock image" class="rounded" width="20%" id="<?=$i?>">
-        <label for="<?=$i?>" id="lable<?=$i?>"><?=$card->getName()?></label>
+        <label class="h2" for="<?=$i?>" id="label-<?=$i?>"><?=$card->getName()?></label>
     <?php
     endforeach;
 ?>
+<h3 id="to-change1">this should be changed</h3>
+<h3 id="to-change2">this should be changed</h3>
 
 </body>
 
-<script src="assets/js/handleRequestPokerGame.js"></script>
+<script src="assets/request/handleRequestPokerGame.js"></script>

@@ -12,6 +12,11 @@ test("dealer gives Deck", function ()
     $dealer = new StandardPlayingCardDealer();
     expect($dealer->popCards(1))->toBeInstanceOf(Deck::class);
 });
+test("dealer gives Deck 2", function ()
+{
+    $dealer = new StandardPlayingCardDealer();
+    expect($dealer->popCards(2))->toBeInstanceOf(Deck::class);
+});
 
 test("dealer gives ICard in Deck", function ()
 {

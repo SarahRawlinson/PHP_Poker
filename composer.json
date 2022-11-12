@@ -7,8 +7,14 @@
             "pestphp/pest-plugin": true
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
     "require": {
         "php": ">=7.4",
+        "vlucas/phpdotenv": "^2.4",
         "composer-plugin-api": "^1.0|^2.0",
         "mrsuh/php-parser": "94.15.2",
         "symfony/console": "^4.0|^5.0|^6.0",
