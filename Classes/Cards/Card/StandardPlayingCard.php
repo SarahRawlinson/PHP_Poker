@@ -94,4 +94,9 @@ class StandardPlayingCard implements ICard
         usort($copy, function ($a, $b) {return self::compareRank($a, $b);});
         return new Deck($copy);
     }
+
+    public function getImagePath(): string
+    {
+        return 'assets/card_images/card_face/'.$this->getImage();
+    }
 }

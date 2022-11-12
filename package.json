@@ -1,7 +1,12 @@
-﻿{
+{
   "name": "PHP_Poker",
   "version": "1.0.0",
   "dependencies": {
+    "bootstrap": "^5.2.2",
+    "jquery": "^3.6.1",
     "lite-server": "^2.5.4"
+  },
+  "scripts": {
+    "start": "lite-server"
   }
 }

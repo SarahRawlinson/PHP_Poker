@@ -19,4 +19,4 @@ include_once ("Classes\Cards\Deck.php");
 include_once ("Classes\Calculations\Duplicates.php");
 include_once("Classes\Calculations\Straight.php");
 include_once("Classes\Calculations\Flush.php");
-include_once ("tests\CardExamples.php");
+include_once("Classes\Cards\CardExamples.php");
