@@ -1,4 +1,5 @@
 {
+    "name": "cards/poker",
     "require-dev": {
         "pestphp/pest": "^1.22"
     },
