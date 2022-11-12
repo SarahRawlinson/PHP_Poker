@@ -1,7 +1,7 @@
 {
     "name": "cards/poker",
-    "require-dev": {
-        "description": "learning php project",
+    "description": "learning php project",
+    "require-dev": {        
         "pestphp/pest": "^1.22"
     },
     "config": {
