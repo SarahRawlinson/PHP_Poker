@@ -1,4 +1,7 @@
 {
+    "name": "cards/poker",
+    "description": "learning php project",
+    "license": "MIT",
     "require-dev": {
         "pestphp/pest": "^1.22"
     },
