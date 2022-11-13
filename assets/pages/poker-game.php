@@ -1,8 +1,11 @@
 ﻿
 <body>
 
-<?php 
-    foreach (CardExamples::getRoyalFlush() as $i=>$card):
+<?php
+
+use App\Classes\Cards\CardExamples;
+
+foreach (CardExamples::getRoyalFlush() as $i=> $card):
     ?>
         <img src="<?=$card->getImagePath()?>" alt="stock image" class="rounded" width="20%" id="<?=$i?>">
         <label class="h2" for="<?=$i?>" id="label-<?=$i?>"><?=$card->getName()?></label>

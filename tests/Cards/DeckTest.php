@@ -1,4 +1,11 @@
 ﻿<?php
+
+//use App\Classes\Cards\Card\ICard;
+//use App\Classes\Cards\Card\RankEnum;
+//use App\Classes\Cards\Card\StandardPlayingCard;
+//use App\Classes\Cards\Card\SuitEnum;
+//use App\Classes\Cards\Deck;
+
 include_once("Include.php");
 
 test('check Deck throws exception when give non-card object', function () {
@@ -18,7 +25,7 @@ test('check Deck throws exception when object not found to remove', function () 
 test('check Deck card can be found and removed by equal rank and suit', function () {
     $deck = new Deck();
     $deck[] = new StandardPlayingCard(RankEnum::King, SuitEnum::Diamonds);
-    $newCard = new StandardPlayingCard(RankEnum::King, SuitEnum::Diamonds);    
+    $newCard = new StandardPlayingCard(RankEnum::King, SuitEnum::Diamonds);
     expect($returned = $deck->remove_card($newCard))->toEqual($newCard)
         ->and(count($deck))->toEqual(0)
         ->and($returned)->toBeInstanceOf(ICard::class);

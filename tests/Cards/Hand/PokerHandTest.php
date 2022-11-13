@@ -1,4 +1,13 @@
 ﻿<?php
+
+//use App\Classes\Cards\Card\RankEnum;
+//use App\Classes\Cards\Card\StandardPlayingCard;
+//use App\Classes\Cards\Card\SuitEnum;
+//use App\Classes\Cards\CardExamples;
+//use App\Classes\Cards\Deck;
+//use App\Classes\Cards\Hand\PokerHand;
+//use App\Classes\Cards\Hand\PokerHandEnum;
+
 include_once("Include.php");
 
 test('check Hand get cards returns Deck', function (){
@@ -58,7 +67,7 @@ test('check Hand clear cards', function (){
 test('check workout hand returns correct', function ($expect, $hand){
 
     $pokerHand = new PokerHand($hand);
-    
+
     expect(PokerHandEnum::tryfrom($pokerHand->workOutHand()))->toEqual($expect);
 })->with(function ()
 {

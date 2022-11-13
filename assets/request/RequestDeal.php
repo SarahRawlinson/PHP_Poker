@@ -1,4 +1,7 @@
 ﻿<?php
+
+use App\Classes\Cards\Dealer\StandardPlayingCardDealer;
+
 include_once ('..\..\Include.php');
 $sent = $_REQUEST['num'];
 $b = false;

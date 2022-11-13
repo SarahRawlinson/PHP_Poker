@@ -1,4 +1,12 @@
 ﻿<?php
+
+//use App\Classes\Calculations\Flush;
+//use App\Classes\Cards\Card\RankEnum;
+//use App\Classes\Cards\Card\StandardPlayingCard;
+//use App\Classes\Cards\Card\SuitEnum;
+//use App\Classes\Cards\CardExamples;
+//use App\Classes\Cards\Deck;
+
 include_once("Include.php");
 
 test('check 7 matching suit returns flush true', function () {

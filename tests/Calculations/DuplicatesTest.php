@@ -1,4 +1,10 @@
 ﻿<?php
+
+//use App\Classes\Calculations\Duplicates;
+//use App\Classes\Cards\Card\StandardPlayingCard;
+//use App\Classes\Cards\CardExamples;
+//use App\Classes\Cards\Dealer\StandardPlayingCardDealer;
+
 include_once("Include.php");
 
 test('test rank duplicates returns true in log', function () {
@@ -40,7 +46,7 @@ test('test Suit duplicates', function ($hasDuplicate, $numOfDuplicates, $cards) 
 });
 
 test('test full house', function () {
-    
+
     $log = Duplicates::GetRankDuplicates(CardExamples::getFourFullHouse());
     expect(Duplicates::isFullHouse($log)[0])->toBeTrue();
 
