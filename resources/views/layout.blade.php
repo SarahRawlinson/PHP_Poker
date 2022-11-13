@@ -16,6 +16,7 @@
         <title>@yield('page name')</title>
         <!-- Fonts -->
         <link href="{{asset('css/main.css')}}" rel="stylesheet">
+        <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     </head>
     <body class="main">
         <ul class="nav">
@@ -26,7 +27,7 @@
             @endforeach
         </ul>
         <h1>@yield('page title')</h1>
-        <h2>links:</h2>
+        <h2>@yield('page content')</h2>
 
     </body>
 </html>

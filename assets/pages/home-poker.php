@@ -14,7 +14,7 @@
         <small class="fw-normal fst-italic">this is my poker page</small>
     </div>
     <div>
-        <img src="../stock_images/photos_2017_9_25_fst_bokeh-lights-surface-wet.jpg" alt="stock image" class="rounded" width="20%">
+        <img src="../../public/stock_images/photos_2017_9_25_fst_bokeh-lights-surface-wet.jpg" alt="stock image" class="rounded" width="20%">
     </div>
     <div class="m-0">
         <a type="button" href="home-poker.php" class="btn btn-success">success</a>
