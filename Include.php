@@ -1,5 +1,4 @@
 ﻿<?php
-
 require __DIR__ ."/Classes/Player/IPerson.php";
 require __DIR__ ."/Classes/Player/PlayerCreator.php";
 require __DIR__ ."/Classes/Player/AI.php";

@@ -2,7 +2,7 @@
     "name": "cards/poker",
     "description": "learning php project",
     "license": "MIT",
-    "require-dev": {
+    "require-dev": {        
         "pestphp/pest": "^1.22"
     },
     "config": {
@@ -10,16 +10,10 @@
             "pestphp/pest-plugin": true
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Src\\": "src/"
-        }
-    },
     "require": {
-        "php": ">=7.4",
-        "vlucas/phpdotenv": "^2.4",
+        "php": ">=8.1",
         "composer-plugin-api": "^1.0|^2.0",
-        "mrsuh/php-parser": "94.15.2",
+        "mrsuh/php-parser": "^94.15.2",
         "symfony/console": "^4.0|^5.0|^6.0",
         "symfony/filesystem": "^4.0|^5.0|^6.0",
         "symfony/finder": "^4.0|^5.0|^6.0"
