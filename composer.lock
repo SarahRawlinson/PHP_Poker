@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0493c625b1971ab8a4457dac2c30abe",
+    "content-hash": "74e86e15e87f3de614f830e5f3252d02",
     "packages": [
         {
             "name": "mrsuh/php-parser",
