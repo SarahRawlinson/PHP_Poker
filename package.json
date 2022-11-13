@@ -1,12 +1,21 @@
 {
-  "name": "PHP_Poker",
-  "version": "1.0.0",
-  "dependencies": {
-    "bootstrap": "^5.2.2",
-    "jquery": "^3.6.1",
-    "lite-server": "^2.5.4"
-  },
-  "scripts": {
-    "start": "lite-server"
-  }
+    "name": "PHP_Poker",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap": "^5.2.2",
+        "jquery": "^3.6.1",
+        "lite-server": "^2.5.4"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.6.0",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "vite": "^3.0.0"
+    },
+    "scripts": {
+        "start": "lite-server",
+        "dev": "vite",
+        "build": "vite build"
+    }
 }
