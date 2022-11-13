@@ -72,8 +72,10 @@ class Deck extends ArrayObject
      */
     public function pop(): mixed
     {
-        $card = parent::getArrayCopy()[0];
-        parent::offsetUnset(0);
+        $copy = parent::getArrayCopy();
+        $last = array_key_last($copy);
+        $card = $copy[$last];
+        parent::offsetUnset($last);
         return $card;
     }
 

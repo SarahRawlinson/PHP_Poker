@@ -30,7 +30,7 @@ test('check Deck pop returns first card in array', function () {
     $queen = new StandardPlayingCard(RankEnum::Queen, SuitEnum::Diamonds);
     $deck[] = $king;
     $deck[] = $queen;
-    expect($returned = $deck->pop())->toEqual($king)
+    expect($returned = $deck->pop())->toEqual($queen)
         ->and(count($deck))->toEqual(1)
         ->and($returned)->toBeInstanceOf(ICard::class);
 });
