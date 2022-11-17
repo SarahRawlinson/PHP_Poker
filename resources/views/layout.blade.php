@@ -3,6 +3,7 @@
     $PageLinks = [
     ['link' => 'home', 'title' => 'Home'],
     ['link' => 'about', 'title' => 'About'],
+    ['link' => 'posts.create', 'title' => 'Blog']
     ];
 ?>
 
@@ -21,13 +22,14 @@
     <body class="main">
         <ul class="nav">
             @foreach($PageLinks as $page)
-                @if(!request()->routeIs($page['link']))
-                    <li><a href="{{ route($page['link']) }}">{{$page['title']}}</a></li>
-                @endif
+                <li><a href="{{ route($page['link']) }}" class={{request()->routeIs($page['link'])?"active":""}}>{{$page['title']}}</a></li>
             @endforeach
         </ul>
+        @includeWhen($errors->any(), '_errors')
+        @includeWhen(session('success'), '_success')
+
         <h1>@yield('page title')</h1>
-        <h2>@yield('page content')</h2>
+        @yield('page content')
 
     </body>
 </html>
