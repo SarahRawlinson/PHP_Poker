@@ -1,12 +1,12 @@
-﻿<?php
+<?php
 
-//use App\Classes\Cards\Card\ICard;
-//use App\Classes\Cards\Card\RankEnum;
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\Card\SuitEnum;
-//use App\Classes\Cards\Deck;
+use App\Classes\Cards\Card\ICard;
+use App\Classes\Cards\Card\RankEnum;
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\Card\SuitEnum;
+use App\Classes\Cards\Deck;
 
-include_once("Include.php");
+//include_once("Include.php");
 
 test('check Deck throws exception when give non-card object', function () {
     $deck = new Deck();

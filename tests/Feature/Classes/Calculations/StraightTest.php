@@ -1,12 +1,12 @@
-﻿<?php
+<?php
 
-//use App\Classes\Calculations\Straight;
-//use App\Classes\Cards\Card\RankEnum;
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\Card\SuitEnum;
-//use App\Classes\Cards\Deck;
+use App\Classes\Calculations\Straight;
+use App\Classes\Cards\Card\RankEnum;
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\Card\SuitEnum;
+use App\Classes\Cards\Deck;
 
-include_once("Include.php");
+//include_once("Include.php");
 
 test('check low straight returns true', function () {
     $deck = new Deck(

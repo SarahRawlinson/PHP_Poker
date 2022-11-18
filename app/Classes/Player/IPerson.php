@@ -1,7 +1,7 @@
-﻿<?php
-//namespace App\Classes\Player;
-//
-//use App\Classes\Cards\Deck;
+<?php namespace App\Classes\Player;
+
+use App\Classes\Cards\Deck;
+
 
 interface IPerson
 {

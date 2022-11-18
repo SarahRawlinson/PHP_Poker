@@ -1,11 +1,11 @@
-﻿<?php
+<?php
 
-//use App\Classes\Calculations\Duplicates;
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\CardExamples;
-//use App\Classes\Cards\Dealer\StandardPlayingCardDealer;
+use App\Classes\Calculations\Duplicates;
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\CardExamples;
+use App\Classes\Cards\Dealer\StandardPlayingCardDealer;
 
-include_once("Include.php");
+//include_once("Include.php");
 
 test('test rank duplicates returns true in log', function () {
     $deck = StandardPlayingCardDealer::createDeck();

@@ -1,5 +1,4 @@
-﻿<?php
-//namespace App\Classes\Cards\Card;
+<?php namespace App\Classes\Cards\Card;
 enum SuitEnum
 {
     case Hearts;

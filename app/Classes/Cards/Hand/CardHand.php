@@ -1,8 +1,7 @@
-﻿<?php
-//namespace App\Classes\Cards\Hand;
-//
-//use App\Classes\Cards\Card\ICard;
-//use App\Classes\Cards\Deck;
+<?php namespace App\Classes\Cards\Hand;
+
+use App\Classes\Cards\Card\ICard;
+use App\Classes\Cards\Deck;
 
 abstract class CardHand implements IHand
 {

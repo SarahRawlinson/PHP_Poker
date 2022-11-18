@@ -1,9 +1,8 @@
-﻿<?php
-//namespace App\Classes\Cards\Hand;
-//
-//use App\Classes\Calculations\Duplicates;
-//use App\Classes\Calculations\Flush;
-//use App\Classes\Calculations\Straight;
+<?php namespace App\Classes\Cards\Hand;
+
+use App\Classes\Calculations\Duplicates;
+use App\Classes\Calculations\Flush;
+use App\Classes\Calculations\Straight;
 
 class PokerHand extends CardHand
 {

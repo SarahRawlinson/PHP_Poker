@@ -1,5 +1,4 @@
-﻿<?php
-//namespace App\Classes\Cards\Hand;
+<?php namespace App\Classes\Cards\Hand;
 enum PokerHandEnum: int
 {
     case HighCard = 1;

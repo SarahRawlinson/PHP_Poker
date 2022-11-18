@@ -1,5 +1,4 @@
-﻿<?php
-//namespace App\Classes\Cards\Card;
+<?php namespace App\Classes\Cards\Card;
 enum RankEnum: int
 {
     case Ace = 14;

@@ -1,8 +1,7 @@
-﻿<?php
-//namespace App\Classes\Cards\Dealer;
-//
-//use App\Classes\Cards\Deck;
-//use App\Classes\Player\PlayerGroup;
+<?php namespace App\Classes\Cards\Dealer;
+
+use App\Classes\Cards\Deck;
+use App\Classes\Player\PlayerGroup;
 
 interface IDealer
 {

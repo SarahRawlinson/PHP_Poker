@@ -1,8 +1,7 @@
-﻿<?php
-//namespace App\Classes\Cards\Card;
-//
-//use App\Classes\Cards\Deck;
-//use JetBrains\PhpStorm\Pure;
+<?php namespace App\Classes\Cards\Card;
+
+use App\Classes\Cards\Deck;
+use JetBrains\PhpStorm\Pure;
 
 class StandardPlayingCard implements ICard
 {

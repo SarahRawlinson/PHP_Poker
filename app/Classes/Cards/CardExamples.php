@@ -1,9 +1,8 @@
-﻿<?php
-//namespace App\Classes\Cards;
-//
-//use App\Classes\Cards\Card\RankEnum;
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\Card\SuitEnum;
+<?php namespace App\Classes\Cards;
+
+use App\Classes\Cards\Card\RankEnum;
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\Card\SuitEnum;
 
 class CardExamples
 {

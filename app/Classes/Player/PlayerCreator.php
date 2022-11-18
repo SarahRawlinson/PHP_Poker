@@ -1,28 +1,22 @@
-﻿<?php
-//namespace App\Classes\Player;
+<?php namespace App\Classes\Player;
 
-enum PlayerType
-{
-    case AI;
-    case Human;
-}
 
 class PlayerCreator
 {
 
     /**
-     * @param \PlayerType $playerType $
+     * @param PlayerType $playerType $
      * @param string $name
      * @return IPerson
      */
-    public static function CreatePlayer(\PlayerType $playerType, string $name): IPerson
+    public static function CreatePlayer(PlayerType $playerType, string $name): IPerson
     {
         switch ($playerType) {
-            case \PlayerType::AI:
+            case PlayerType::AI:
             {
                 return new AI($name);
             }
-            case \PlayerType::Human:
+            case PlayerType::Human:
             {
                 return new Human($name);
             }

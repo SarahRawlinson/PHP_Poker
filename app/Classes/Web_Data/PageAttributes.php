@@ -1,5 +1,5 @@
 ﻿<?php
-//namespace App\Classes\Web_Data;
+namespace App\Classes\Web_Data;
 class PageAttributes
 {
     static array $PageLinks = [

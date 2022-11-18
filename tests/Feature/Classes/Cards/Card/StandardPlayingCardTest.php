@@ -1,11 +1,11 @@
-﻿<?php
+<?php
 
-//use App\Classes\Cards\Card\RankEnum;
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\Card\SuitEnum;
-//use App\Classes\Cards\Deck;
+use App\Classes\Cards\Card\RankEnum;
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\Card\SuitEnum;
+use App\Classes\Cards\Deck;
 
-include_once("Include.php");
+//include_once("Include.php");
 $expectedCards = [
     [RankEnum::Ace, SuitEnum::Diamonds],
     [RankEnum::Two, SuitEnum::Diamonds],

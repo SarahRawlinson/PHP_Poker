@@ -1,5 +1,4 @@
-﻿<?php
-//namespace App\Classes\Betting;
+<?php namespace App\Classes\Betting;
 enum BettingStates
 {
     case bet;

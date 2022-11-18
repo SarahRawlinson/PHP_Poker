@@ -1,8 +1,7 @@
-﻿<?php
-//namespace App\Classes\Calculations;
-//
-//use App\Classes\Cards\Card\StandardPlayingCard;
-//use App\Classes\Cards\Deck;
+<?php namespace App\Classes\Calculations;
+
+use App\Classes\Cards\Card\StandardPlayingCard;
+use App\Classes\Cards\Deck;
 
 class Duplicates
 {

@@ -1,8 +1,8 @@
-﻿<?php
-//namespace App\Classes\Cards;
-//
-//use App\Classes\Cards\Card\ICard;
-//use ReturnTypeWillChange;
+<?php namespace App\Classes\Cards;
+
+use App\Classes\Cards\Card\ICard;
+use ArrayObject;
+use ReturnTypeWillChange;
 
 class Deck extends ArrayObject
 {

@@ -1,7 +1,7 @@
-﻿<?php
-//namespace App\Classes\Player;
-////TODO: Test
-//use ReturnTypeWillChange;
+<?php namespace App\Classes\Player;
+//TODO: Test
+use ArrayObject;
+use ReturnTypeWillChange;
 
 class PlayerGroup extends ArrayObject
 {

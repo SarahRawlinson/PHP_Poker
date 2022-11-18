@@ -1,5 +1,4 @@
-﻿<?php
-//namespace App\Classes\Cards\Card;
+<?php namespace App\Classes\Cards\Card;
 interface ICard
 {
     public function getValue(): int;

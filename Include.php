@@ -5,7 +5,7 @@ require __DIR__ ."/app/Classes/Player/AI.php";
 require __DIR__ ."/app/Classes/Player/Human.php";
 require __DIR__ ."/app/Classes/Player/PlayerGroup.php";
 require __DIR__ ."/app/Classes/Cards/Card/ICard.php";
-require __DIR__ ."/app/Classes/Cards/Card/RankEnum.php";
+require __DIR__ . "/app/Classes/Cards/Card/RankEnum.php";
 require __DIR__ ."/app/Classes/Cards/Card/StandardPlayingCard.php";
 require __DIR__ ."/app/Classes/Cards/Card/SuitEnum.php";
 require __DIR__ ."/app/Classes/Cards/Dealer/IDealer.php";

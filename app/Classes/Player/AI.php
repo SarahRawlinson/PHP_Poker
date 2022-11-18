@@ -1,7 +1,7 @@
-﻿<?php
-//namespace App\Classes\Player;
-////TODO: Test
-//use App\Classes\Cards\Deck;
+<?php
+namespace App\Classes\Player;
+//TODO: Test
+use App\Classes\Cards\Deck;
 
 class AI implements IPerson
 {
