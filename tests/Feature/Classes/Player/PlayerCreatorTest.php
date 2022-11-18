@@ -5,7 +5,6 @@ use App\Classes\Player\IPerson;
 use App\Classes\Player\PlayerCreator;
 use App\Classes\Player\PlayerType;
 
-//include_once("Include.php");
 
 $players =
     [["bob", PlayerType::AI],
