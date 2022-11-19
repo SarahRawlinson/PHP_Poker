@@ -71,29 +71,45 @@ class PostController extends Controller
             'post' => Post::findOrFail($id),
         ]);
     }
-//
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param int $id
-//     * @return void
-//     */
-//    public function edit(int $id): void
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param Request $request
-//     * @param int $id
-//     * @return void
-//     */
-//    public function update(Request $request, int $id): void
-//    {
-//        //
-//    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return Application|Factory|View
+     */
+    public function edit(int $id): View|Factory|Application
+    {
+        return view('posts.edit', [
+            'post' => Post::findOrFail($id),
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, int $id): RedirectResponse
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => ['required', 'min:10'],
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+
+        $post->save();
+
+        return redirect()
+            ->route('posts.show', ['post' => $post->id])
+            ->with('success', 'Post is updated!');
+    }
 //
 //    /**
 //     * Remove the specified resource from storage.
