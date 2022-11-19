@@ -3,6 +3,7 @@
 use App\Classes\Cards\Card\RankEnum;
 use App\Classes\Cards\Card\StandardPlayingCard;
 use App\Classes\Cards\Deck;
+use InvalidArgumentException;
 
 class Straight
 {
@@ -21,7 +22,7 @@ class Straight
                 }
                 $array[$card->getValue()][] = $card;
             } else {
-                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+                throw new InvalidArgumentException('Deck must only contain type Standard Playing Card');
             }
         }
         $continuous = 0;

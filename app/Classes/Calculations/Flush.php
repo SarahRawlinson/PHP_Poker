@@ -3,6 +3,7 @@
 use App\Classes\Cards\Card\RankEnum;
 use App\Classes\Cards\Card\StandardPlayingCard;
 use App\Classes\Cards\Deck;
+use InvalidArgumentException;
 
 class Flush
 {
@@ -65,7 +66,7 @@ class Flush
                             $kingFoundInStraight = true;
                         }
                     } else {
-                        throw new \InvalidArgumentException('array must only contain type Standard Playing Card');
+                        throw new InvalidArgumentException('array must only contain type Standard Playing Card');
                     }
 
                 }

@@ -10,10 +10,11 @@ abstract class CardHand implements IHand
 
 
     /**
-     * @param Deck $deck
+     * @param Deck|null $deck
      */
-    public function __construct(Deck $deck = new Deck())
+    public function __construct(Deck|null $deck = null)
     {
+        $deck ??= new Deck();
         $this->deck = $deck;
     }
 

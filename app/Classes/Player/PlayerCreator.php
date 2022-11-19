@@ -20,10 +20,7 @@ class PlayerCreator
             {
                 return new Human($name);
             }
-            default:
-            {
-                die("player type not implemented");
-            }
         }
+        die("player type not implemented");
     }
 }

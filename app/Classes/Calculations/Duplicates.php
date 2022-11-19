@@ -2,6 +2,7 @@
 
 use App\Classes\Cards\Card\StandardPlayingCard;
 use App\Classes\Cards\Deck;
+use InvalidArgumentException;
 
 class Duplicates
 {
@@ -28,7 +29,7 @@ class Duplicates
             if ($card instanceof StandardPlayingCard) {
                 $ranks[$card->getRank()->name][] = $card;
             } else {
-                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+                throw new InvalidArgumentException('Deck must only contain type Standard Playing Card');
             }
         }
         return self::DuplicateLog($ranks);
@@ -57,7 +58,7 @@ class Duplicates
             if ($card instanceof StandardPlayingCard) {
                 $ranks[$card->getSuit()->name][] = $card;
             } else {
-                throw new \InvalidArgumentException('Deck must only contain type Standard Playing Card');
+                throw new InvalidArgumentException('Deck must only contain type Standard Playing Card');
             }
 
         }

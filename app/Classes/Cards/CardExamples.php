@@ -6,7 +6,10 @@ use App\Classes\Cards\Card\SuitEnum;
 
 class CardExamples
 {
-    public static function getRoyalFlush()
+    /**
+     * @return Deck
+     */
+    public static function getRoyalFlush(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Ace, SuitEnum::Clubs),
@@ -18,7 +21,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getStraightFlush()
+    /**
+     * @return Deck
+     */
+    public static function getStraightFlush(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Ace, SuitEnum::Clubs),
@@ -30,7 +36,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getFourOfAKind()
+    /**
+     * @return Deck
+     */
+    public static function getFourOfAKind(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -42,7 +51,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getFourFullHouse()
+    /**
+     * @return Deck
+     */
+    public static function getFourFullHouse(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -54,7 +66,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getFlush()
+    /**
+     * @return Deck
+     */
+    public static function getFlush(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -66,7 +81,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getStraight()
+    /**
+     * @return Deck
+     */
+    public static function getStraight(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Ace, SuitEnum::Hearts),
@@ -78,7 +96,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getThreeOfAKind()
+    /**
+     * @return Deck
+     */
+    public static function getThreeOfAKind(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -90,7 +111,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getTwoPair()
+    /**
+     * @return Deck
+     */
+    public static function getTwoPair(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -102,7 +126,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getPair()
+    /**
+     * @return Deck
+     */
+    public static function getPair(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Two, SuitEnum::Hearts),
@@ -114,7 +141,10 @@ class CardExamples
         return new Deck($cards);
     }
 
-    public static function getHighCard()
+    /**
+     * @return Deck
+     */
+    public static function getHighCard(): Deck
     {
         $cards = [
             new StandardPlayingCard(RankEnum::Ace, SuitEnum::Hearts),

@@ -5,7 +5,7 @@ use App\Classes\Cards\Deck;
 
 class AI implements IPerson
 {
-    private string $name = "";
+    private string $name;
 
     public function __construct($name)
     {

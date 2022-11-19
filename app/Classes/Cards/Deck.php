@@ -2,6 +2,7 @@
 
 use App\Classes\Cards\Card\ICard;
 use ArrayObject;
+use InvalidArgumentException;
 use ReturnTypeWillChange;
 
 class Deck extends ArrayObject
@@ -13,8 +14,11 @@ class Deck extends ArrayObject
      */
     #[ReturnTypeWillChange] public function offsetSet($key, $value)
     {
-        if ($value instanceof ICard) return parent::offsetSet($key, $value);
-        throw new \InvalidArgumentException('Value must be type ICard');
+        if ($value instanceof ICard) {
+            return parent::offsetSet($key, $value);
+        } else {
+            return throw new InvalidArgumentException('Value must be type ICard');
+        }
     }
 
     /**
@@ -27,7 +31,7 @@ class Deck extends ArrayObject
         if (is_array($array)) {
             foreach ($array as $object) {
                 if (!$object instanceof ICard) {
-                    throw new \InvalidArgumentException('Value must be type ICard' . $object);
+                    throw new InvalidArgumentException('Value must be type ICard' . $object);
                 }
             }
         }
@@ -38,13 +42,13 @@ class Deck extends ArrayObject
      * @param Deck $deck
      * @return void
      */
-    public function array_merge(Deck $deck): void
+    public function array_merge(self $deck): void
     {
         foreach ($deck as $card) {
             if ($card instanceof ICard) {
                 parent::append($card);
             } else {
-                throw new \InvalidArgumentException('Values must be type ICard');
+                throw new InvalidArgumentException('Values must be type ICard');
             }
         }
     }
@@ -60,7 +64,7 @@ class Deck extends ArrayObject
             parent::offsetUnset($key);
             return $card;
         } else {
-            throw new \InvalidArgumentException('ICard not found in Deck');
+            throw new InvalidArgumentException('ICard not found in Deck');
         }
     }
 
@@ -95,11 +99,11 @@ class Deck extends ArrayObject
     /**
      * @return Deck
      */
-    public function randomize(): Deck
+    public function randomize(): self
     {
         $deck = parent::getArrayCopy();
         if (shuffle($deck)) {
-            return new Deck($deck);
+            return new self($deck);
 
         }
         echo "couldn't shuffle";

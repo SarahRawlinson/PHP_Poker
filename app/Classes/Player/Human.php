@@ -4,7 +4,7 @@ use App\Classes\Cards\Deck;
 
 class Human implements IPerson
 {
-    private string $name = "";
+    private string $name;
 
     public function __construct($name)
     {
