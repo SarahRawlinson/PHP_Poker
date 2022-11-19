@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PokerController;
 use App\Http\Controllers\PostController;
@@ -29,3 +30,7 @@ Route::resource('posts', PostController::class)->except(
 Route::resource('poker', PokerController::class)->except(
     ['index']
 );
+
+Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register');
+Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
