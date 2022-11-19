@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostFormRequest;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -34,28 +34,18 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param PostFormRequest $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(PostFormRequest $request): RedirectResponse
     {
-        $request->validate(
-            [
-                'title' => 'required',
-                'description' => ['required', 'min:10']
-            ]
-        );
-
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-        $post->save();
-
+        $validated = $request->validated();
+        $post = Post::create($validated);
         return redirect()
             ->route('posts.show', [$post])
             ->with('success', 'post is submitted! Title: '
-                .$post->title.' Description: '
-                .$post->description);
+                . $post->title . ' Description: '
+                . $post->description);
     }
 
     /**
@@ -83,22 +73,14 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param PostFormRequest $request
      * @param Post $post
      * @return RedirectResponse
      */
-    public function update(Request $request, Post $post): RedirectResponse
+    public function update(PostFormRequest $request, Post $post): RedirectResponse
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => ['required', 'min:10'],
-        ]);
-
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-
-        $post->save();
-
+        $validated = $request->validated();
+        $post->update($validated);
         return redirect()
             ->route('posts.show', [$post])
             ->with('success', 'Post is updated!');
