@@ -7,6 +7,8 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -44,23 +46,31 @@ class PostController extends Controller
                 'description' => ['required', 'min:10']
             ]
         );
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->save();
+
         return redirect()
             ->route('posts.create')
             ->with('success', 'post is submitted! Title: '
-                .$request->input('title').' Description: '
-                .$request->input('description'));
+                .$post->title.' Description: '
+                .$post->description);
     }
 
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param int $id
-//     * @return void
-//     */
-//    public function show(int $id): void
-//    {
-//        //
-//    }
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return Application|Factory|View
+     */
+    public function show(int $id): Application|Factory|View
+    {
+        return view('posts.show', [
+            'post' => Post::findOrFail($id),
+        ]);
+    }
 //
 //    /**
 //     * Show the form for editing the specified resource.

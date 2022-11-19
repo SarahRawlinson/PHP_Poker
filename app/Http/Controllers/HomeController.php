@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
     public static function home(): Factory|View|Application
     {
-        return view('home');
+        $posts = Post::all();
+        return view('home', compact('posts'));
     }
 
     /**
