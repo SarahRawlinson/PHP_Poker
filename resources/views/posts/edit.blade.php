@@ -1,11 +1,15 @@
-﻿@extends('layout')
+﻿@php use App\Models\Post; @endphp
+@extends('layout')
 @section('page name','Edit post')
 @section('page title','Edit post')
 @section('page content')
     <h2>please update your blog post</h2>
-    <form method="POST" action="{{ route('posts.update' , ['post' => $post->id]) }}">
+    <form method="POST" action="{{ route('posts.update' , [$post]) }}">
         @csrf
         @method('PUT')
+        @if(!is_a($post, Post::class))
+            {{die()}}
+        @endif
         <label for="title">Title</label><br>
         <label>
             <input type="text" name="title"
@@ -19,9 +23,9 @@
         @enderror
         <label for="description">Description</label><br>
         <label>
-            <textarea type="text" name="description"
-                      class="@error('description') error-border @enderror"
-            >{{old('description')??$post->description}}</textarea>
+        <textarea type="text" name="description"
+                  class="@error('description') error-border @enderror"
+        >{{old('description')??$post->description}}</textarea>
         </label><br>
         @error('description')
         <div class="error">

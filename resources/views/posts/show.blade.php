@@ -1,12 +1,15 @@
 ﻿
+@if(!is_a($post, Post::class))
+    {{die()}}
+@endif
 @extends('layout')
 @section('page name',$post->id)
 @section('page title',$post->id)
 @section('page content')
     <h2>Post number #{{ $post->id }}</h2>
-        <div class="post-content">
-            <h2>{{ $post->title }}</h2>
-            <p>{{ $post->description }}</p>
-            <a href="{{route('posts.edit', ['post' => $post->id])}}">Edit Post</a>
-        </div>
+    <div class="post-content">
+        <h2>{{ $post->title }}</h2>
+        <p>{{ $post->description }}</p>
+        <a href="{{route('posts.edit', [$post])}}">Edit Post</a>
+    </div>
 @endsection

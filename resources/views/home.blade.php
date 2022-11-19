@@ -5,10 +5,10 @@
 @section('page content')
     <h2>welcome to my Home page</h2>
     @forelse($posts as $post)
-    <div class="post-content">
-        <h2><a href="{{route('posts.show', ['post' => $post->id])}}">{{ $post->title }}</a></h2>
-        <p>{{ $post->description }}</p>
-    </div>
+        <div class="post-content">
+            <h2><a href="{{route('posts.show', [$post])}}">{{ $post->title }}</a></h2>
+            <p>{{ $post->description }}</p>
+        </div>
     @empty
         <p>There are no posts yet</p>
     @endforelse

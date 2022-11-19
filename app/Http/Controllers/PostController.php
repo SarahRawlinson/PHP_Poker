@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -52,7 +52,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect()
-            ->route('posts.create')
+            ->route('posts.show', [$post])
             ->with('success', 'post is submitted! Title: '
                 .$post->title.' Description: '
                 .$post->description);
@@ -61,44 +61,38 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Post $post
      * @return Application|Factory|View
      */
-    public function show(int $id): Application|Factory|View
+    public function show(Post $post): Application|Factory|View
     {
-        return view('posts.show', [
-            'post' => Post::findOrFail($id),
-        ]);
+        return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param Post $post
      * @return Application|Factory|View
      */
-    public function edit(int $id): View|Factory|Application
+    public function edit(Post $post): View|Factory|Application
     {
-        return view('posts.edit', [
-            'post' => Post::findOrFail($id),
-        ]);
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param int $id
+     * @param Post $post
      * @return RedirectResponse
      */
-    public function update(Request $request, int $id): RedirectResponse
+    public function update(Request $request, Post $post): RedirectResponse
     {
         $request->validate([
             'title' => 'required',
             'description' => ['required', 'min:10'],
         ]);
-
-        $post = Post::findOrFail($id);
 
         $post->title = $request->input('title');
         $post->description = $request->input('description');
@@ -106,7 +100,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect()
-            ->route('posts.show', ['post' => $post->id])
+            ->route('posts.show', [$post])
             ->with('success', 'Post is updated!');
     }
 //
