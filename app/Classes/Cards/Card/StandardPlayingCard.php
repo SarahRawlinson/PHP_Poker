@@ -98,8 +98,13 @@ class StandardPlayingCard implements ICard
         return new Deck($copy);
     }
 
+    public function getImageFolderPath(): string
+    {
+        return 'public/img/card_images/card_face/' . $this->getImage();
+    }
+
     public function getImagePath(): string
     {
-        return 'assets/card_images/card_face/' . $this->getImage();
+        return 'img/card_images/card_face/' . $this->getImage();
     }
 }

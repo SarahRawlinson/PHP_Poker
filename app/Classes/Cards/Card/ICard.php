@@ -7,5 +7,7 @@ interface ICard
 
     public function getImage(): string;
 
+    public function getImageFolderPath(): string;
+
     public function getImagePath(): string;
 }

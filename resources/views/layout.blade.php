@@ -3,7 +3,8 @@
     $PageLinks = [
     ['link' => 'home', 'title' => 'Home'],
     ['link' => 'about', 'title' => 'About'],
-    ['link' => 'posts.create', 'title' => 'Blog']
+    ['link' => 'posts.create', 'title' => 'Blog'],
+    ['link' => 'poker.create', 'title' => 'Poker']
     ];
 ?>
 

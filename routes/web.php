@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PokerController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +26,6 @@ Route::resource('posts', PostController::class)->except(
     ['index']
 );
 
+Route::resource('poker', PokerController::class)->except(
+    ['index']
+);

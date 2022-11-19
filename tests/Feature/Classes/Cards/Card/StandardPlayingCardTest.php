@@ -80,7 +80,7 @@ test("check name is string", function (StandardPlayingCard $card)
 
 test("check image for file exists", function (StandardPlayingCard $card)
 {
-    $name = "assets/card_images/card_face/".$card->getImage();
+    $name = $card->getImageFolderPath();
     if (!file_exists($name)) {echo $name."\n";}
     expect(file_exists($name))->toBeTrue();
 })->with(function()
