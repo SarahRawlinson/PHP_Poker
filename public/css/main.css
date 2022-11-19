@@ -32,10 +32,10 @@ ul.nav {
 }
 
 .nav li p {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 0px 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0 30px;
 }
 
 .nav li a:hover:not(.active) {
@@ -94,30 +94,38 @@ button {
 /* Flash messages */
 
 .flash-success {
-  padding: 20px;
-  background-color: #33a43a;
-  color: white;
-  margin: 20px 0px;
-  border-radius: 4px;
+    padding: 20px;
+    background-color: #33a43a;
+    color: white;
+    margin: 20px 0;
+    border-radius: 4px;
 }
 
 .flash-error {
-  padding: 20px;
-  background-color: rgb(235, 47, 47);
-  color: white;
-  margin: 20px 0px;
-  border-radius: 4px;
+    padding: 20px;
+    background-color: rgb(235, 47, 47);
+    color: white;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.flash-delete {
+    padding: 20px;
+    background-color: rgb(235, 85, 47);
+    color: white;
+    margin: 20px 0;
+    border-radius: 4px;
 }
 
 
 /* Error messages */
 
 .error {
-  color: red;
+    color: red;
 }
 
 .error-border {
-  border: 2px solid red !important;
+    border: 2px solid red !important;
 }
 
 

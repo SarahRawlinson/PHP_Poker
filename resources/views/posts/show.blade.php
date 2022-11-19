@@ -1,15 +1,25 @@
-﻿
-@if(!is_a($post, Post::class))
-    {{die()}}
-@endif
+﻿<?php
+$id = $post->id ?? null;
+$title = $post->title ?? null;
+$description = $post->description ?? null;
+if ($id == null || $title == null || $description == null) {
+    die();
+}
+?>
+
 @extends('layout')
-@section('page name',$post->id)
-@section('page title',$post->id)
+@section('page name',$id)
+@section('page title',$id)
 @section('page content')
-    <h2>Post number #{{ $post->id }}</h2>
+    <h2>Post number #{{ $id }}</h2>
     <div class="post-content">
-        <h2>{{ $post->title }}</h2>
-        <p>{{ $post->description }}</p>
+        <h2>{{ $title }}</h2>
+        <p>{{ $description }}</p>
         <a href="{{route('posts.edit', [$post])}}">Edit Post</a>
+        <form method="POST" action="{{route('posts.destroy',[$post])}}">
+            @csrf
+            @method('DELETE')
+            <button class="delete" type="submit">Delete Post</button>
+        </form>
     </div>
 @endsection

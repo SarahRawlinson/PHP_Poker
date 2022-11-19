@@ -103,15 +103,19 @@ class PostController extends Controller
             ->route('posts.show', [$post])
             ->with('success', 'Post is updated!');
     }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param int $id
-//     * @return void
-//     */
-//    public function destroy(int $id): void
-//    {
-//        //
-//    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Post $post
+     * @return RedirectResponse
+     */
+    public function destroy(Post $post): RedirectResponse
+    {
+        $id = $post->id;
+        $title = $post->title;
+        $post->delete();
+        return redirect()->route('home')
+            ->with('deleted', '"Post ' . $id . ' : ' . $title . '" has now been deleted');
+    }
 }
