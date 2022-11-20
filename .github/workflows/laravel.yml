@@ -32,7 +32,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
 
-      run: php artisan migrate
+      run: php artisan migrate:refresh
 
     - name: tests
       run: ./vendor/bin/pest
