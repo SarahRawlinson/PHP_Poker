@@ -33,6 +33,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
 
       run: |
+        composer require doctrine/dbal
         php artisan migrate
         php artisan migrate:refresh
 
