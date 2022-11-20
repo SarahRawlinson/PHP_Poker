@@ -25,6 +25,7 @@ return new class extends Migration
             else
             {
                 $table->foreignId('user_id')
+                    ->nullable()
                     ->constrained()
                     ->onDelete('cascade');
             }

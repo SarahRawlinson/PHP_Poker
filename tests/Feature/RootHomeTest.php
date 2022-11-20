@@ -6,8 +6,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\App;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class RootHomeTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic test example.
      *
