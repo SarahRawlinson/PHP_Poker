@@ -13,10 +13,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('posts', static function (Blueprint $table) {
-            $table->foreignId('user_id')
-                ->constrained()
-                ->onDelete('cascade');
+
+        Schema::table('posts', function (Blueprint $table) {
+            $driver = Schema::connection($this->getConnection())->getConnection()->getDriverName();
+            if ('sqlite' === $driver) {
+                $table->foreignId('user_id')
+                    ->nullable()
+                    ->constrained()
+                    ->onDelete('cascade');
+            }
+            else
+            {
+                $table->foreignId('user_id')
+                    ->constrained()
+                    ->onDelete('cascade');
+            }
         });
     }
 
