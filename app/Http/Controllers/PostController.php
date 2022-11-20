@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostFormRequest;
 use App\Models\Post;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -64,9 +65,11 @@ class PostController extends Controller
      *
      * @param Post $post
      * @return Application|Factory|View
+     * @throws AuthorizationException
      */
     public function edit(Post $post): View|Factory|Application
     {
+        $this->authorize('update', $post);
         return view('posts.edit', compact('post'));
     }
 
@@ -91,9 +94,11 @@ class PostController extends Controller
      *
      * @param Post $post
      * @return RedirectResponse
+     * @throws AuthorizationException
      */
     public function destroy(Post $post): RedirectResponse
     {
+        $this->authorize('delete', $post);
         $id = $post->id;
         $title = $post->title;
         $post->delete();

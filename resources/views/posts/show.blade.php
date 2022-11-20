@@ -15,11 +15,15 @@ if ($id == null || $title == null || $description == null) {
     <div class="post-content">
         <h2>{{ $title }}</h2>
         <p>{{ $description }}</p>
+        @can('update',$post)
         <a href="{{route('posts.edit', [$post])}}">Edit Post</a>
+        @endcan
+        @can('delete', $post)
         <form method="POST" action="{{route('posts.destroy',[$post])}}">
             @csrf
             @method('DELETE')
             <button class="delete" type="submit">Delete Post</button>
         </form>
+        @endcan
     </div>
 @endsection

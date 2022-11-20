@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $description
  * @property string $title
  * @property mixed $id
+ * @property mixed $user_id
  */
 class Post extends Model
 {
