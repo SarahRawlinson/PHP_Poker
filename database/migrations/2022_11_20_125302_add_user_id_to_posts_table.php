@@ -16,7 +16,7 @@ return new class extends Migration
 
         Schema::table('posts', function (Blueprint $table) {
             $driver = Schema::connection($this->getConnection())->getConnection()->getDriverName();
-            if ('sqlite' === $driver) {
+            if ($driver === 'sqlite') {
                 $table->foreignId('user_id')
                     ->nullable()
                     ->constrained()
@@ -38,8 +38,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('posts', static function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
+        Schema::table('posts', function (Blueprint $table) {
+            $driver = Schema::connection($this->getConnection())->getConnection()->getDriverName();
+            if ($driver !== 'sqlite') {
+                $table->dropForeign(['user_id']);
+            }
             $table->dropColumn('user_id');
         });
     }
