@@ -25,12 +25,12 @@ Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Route::resource('posts', PostController::class)->except(
     ['index']
-);
+)->middleware('auth');
 
 Route::resource('poker', PokerController::class)->except(
     ['index']
 );
 
-Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register');
-Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
+Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');

@@ -5,4 +5,33 @@
     background-repeat: repeat;
     color: white;
     background-color: #1a202c;
+    font-family: Broadway, serif;
+}
+
+.title-bar
+{
+
+    color: powderblue;
+    font-size: xxx-large;
+    border-style: double;
+    border-color: rgba(94, 106, 238, 0.4);
+    /*text-decoration: underline solid #5f40ea;*/
+    text-shadow: -13px 3px 10px #00C8FF, -24px 5px 10px #416090, -22px 4px 10px #AB5393;
+    text-transform: uppercase;
+    transform: scale(1.38);
+    display: block;
+    justify-content: space-between;
+
+
+}
+.nav
+{
+    font-size: x-large;
+
+}
+.active
+{
+    font-weight: 700;
+    font-size: xx-large;
+    color: #10393d !important;
 }

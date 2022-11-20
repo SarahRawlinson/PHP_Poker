@@ -17,6 +17,8 @@
 
             </h2>
             <p>{{ $post->description }}</p>
+            <small class="row">posted by <b>{{$post->user->name}}</b></small>
+            <small class="row">time: <b>{{$post->updated_at}}</b></small>
         </div>
     @empty
         <p>There are no posts yet</p>

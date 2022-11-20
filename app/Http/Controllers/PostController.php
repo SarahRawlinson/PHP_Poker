@@ -40,7 +40,7 @@ class PostController extends Controller
     public function store(PostFormRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        $post = Post::create($validated);
+        $post = $request->user()->posts()->create($validated);
         return redirect()
             ->route('posts.show', [$post])
             ->with('success', 'post is submitted! Title: '
