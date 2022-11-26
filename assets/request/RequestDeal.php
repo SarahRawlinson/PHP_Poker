@@ -1,7 +1,17 @@
 ﻿<?php
-include_once ('..\..\Include.php');
+
+use App\Classes\Cards\Dealer\StandardPlayingCardDealer;
+
 $sent = $_REQUEST['num'];
-$dealer = new StandardPlayingCardDealer();
+$b = false;
+if (!isset($_SERVER['dealer']))
+{
+    $b = true;
+    $_SERVER['dealer'] = new StandardPlayingCardDealer();
+}
+
+
+$dealer = $_SERVER['dealer'];
 $dealer->shuffleCards();
 $cards = $dealer->popCards($sent);
 $array = [];
@@ -9,4 +19,4 @@ foreach ($cards as $i=>$card)
 {
     $array["v".$i] = [ 'image'=>$card->getImagePath(), 'name'=>$card->getName()];
 }
-echo json_encode(['log' => $array, 'dealer_count' => $dealer->getDeck()->count()]);
+echo json_encode(['log' => $array, 'dealer_count' => $b]);
