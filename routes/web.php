@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PokerController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +28,11 @@ Route::resource('posts', PostController::class)->except(
     ['index']
 )->middleware('auth');
 
-Route::resource('poker', PokerController::class)->except(
-    ['index']
-);
+Route::resource('poker', PokerController::class);
 
 Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/ajax-form', 'PokerController@ajax_form');
+Route::get('/todo-send', [CrudController::class, 'index']);
+Route::resource('todo', CrudController::class);

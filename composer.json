@@ -19,10 +19,13 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
+        "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.3",
         "symfony/console": "^4.0|^5.0|^6.0",
         "symfony/filesystem": "^4.0|^5.0|^6.0",
-        "symfony/finder": "^4.0|^5.0|^6.0"
+        "symfony/finder": "^4.0|^5.0|^6.0",
+        "ext-http": "*"
     },
 
     "autoload": {
