@@ -38,7 +38,7 @@ function deal(Deck &$deck): ICard
 <h3 id="to-change2">{{$deck->count()}}</h3>
 <form>
 {{--    @csrf--}}
-    <button name="button1" id="button1" type="submit">button</button>
+    <button name="button-deal" id="button-deal" type="submit">button</button>
 </form>
 
 

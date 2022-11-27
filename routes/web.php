@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PokerController;
+use App\Http\Controllers\PokerRequestController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
@@ -36,3 +37,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middle
 Route::get('/ajax-form', 'PokerController@ajax_form');
 Route::get('/todo-send', [CrudController::class, 'index']);
 Route::resource('todo', CrudController::class);
+Route::resource('poker-request', PokerRequestController::class);

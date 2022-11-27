@@ -1,27 +1,27 @@
-﻿jQuery(document).ready(function($){
+﻿$(document).ready(function($){
     //----- Open model CREATE -----//
-    jQuery('#btn-add').click(function () {
-        jQuery('#btn-save').val("add");
-        jQuery('#myForm').trigger("reset");
-        jQuery('#formModal').modal('show');
+    $('#btn-add').click(function () {
+        $('#btn-save').val("add");
+        $('#myForm').trigger("reset");
+        $('#formModal').modal('show');
     });
     // CREATE
     $("#btn-save").click(function (e) {
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': CSRF_TOKEN
             }
         });
         e.preventDefault();
-        var formData = {
-            title: jQuery('#title').val(),
-            description: jQuery('#description').val(),
+        let formData = {
+            title: $('#title').val(),
+            description: $('#description').val(),
         };
-        var state = jQuery('#btn-save').val();
-        var type = "POST";
-        var todo_id = jQuery('#todo_id').val();
-        var ajaxurl = 'todo';
+        let state = $('#btn-save').val();
+        let type = "POST";
+        let todo_id = $('#todo_id').val();
+        let ajaxurl = 'todo';
         $.ajax({
             type: type,
             url: ajaxurl,
@@ -29,7 +29,7 @@
             dataType: 'json',
             success: function (data) {
 
-                var todo = '<tr id="todo' + data.id + '"><td>' + data.id + '</td><td>' + data.title + '</td><td>' + data.description + '</td>';
+                let todo = '<tr id="todo' + data.id + '"><td>' + data.id + '</td><td>' + data.title + '</td><td>' + data.description + '</td>';
 
                 if (state == "add") {
                     let message = $('#server-message');
@@ -39,8 +39,8 @@
                 } else {
                     $("#todo" + todo_id).replaceWith(todo);
                 }
-                jQuery('#myForm').trigger("reset");
-                jQuery('#formModal').modal('hide')
+                $('#myForm').trigger("reset");
+                $('#formModal').modal('hide')
             },
             error: function (data) {
                 console.log(data);
