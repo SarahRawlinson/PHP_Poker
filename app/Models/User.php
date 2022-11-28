@@ -54,4 +54,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * @return HasMany
+     */
+    public function poker_game(): HasMany
+    {
+        return $this->hasMany(PokerGame::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function to_do(): HasMany
+    {
+        return $this->hasMany(Todo::class);
+    }
 }

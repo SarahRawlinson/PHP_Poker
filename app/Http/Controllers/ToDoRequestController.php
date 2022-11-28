@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ToDoRequest;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Todo;
 use Illuminate\Http\Response;
 
-class CrudController extends Controller {
+class ToDoRequestController extends Controller {
     /**
      * Display a listing of the resource.
      *
@@ -23,13 +24,10 @@ class CrudController extends Controller {
      * Store a newly created resource in storage.
      *
      */
-    public function store(Request $request): Response|Application|ResponseFactory
+    public function store(ToDoRequest $request): Response|Application|ResponseFactory
     {
-        $data = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required'
-        ]);
-        $todo = Todo::create($data);
+        $validated = $request->validated();
+        $todo = $request->user()->to_do()->create($validated);
         return response(json_encode($todo), 200);
     }
     /**

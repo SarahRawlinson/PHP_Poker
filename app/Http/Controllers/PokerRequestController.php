@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PokerGameRequest;
 use App\Models\PokerGame;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -21,16 +22,16 @@ class PokerRequestController extends Controller
         $pokergame = PokerGame::all();
         return view('poker.create')->with(compact('pokergame'));
     }
+
+
     /**
-     * Store a newly created resource in storage.
-     *
+     * @param PokerGameRequest $request
+     * @return Response|Application|ResponseFactory
      */
-    public function store(Request $request): Response|Application|ResponseFactory
+    public function startNewGame(PokerGameRequest $request): Response|Application|ResponseFactory
     {
-//        $data = $request->validate([
-//            'number' => 'required|max:255'
-//        ]);
-//        $game = PokerGame::create($data);
+        $validated = $request->validated();
+        $game = $request->user()->poker_game()->create($validated);
         return response(json_encode(['response' => 'ok']), 200);
     }
 }

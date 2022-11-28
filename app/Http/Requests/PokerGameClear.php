@@ -4,16 +4,16 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostFormRequest extends FormRequest
+class PokerGameClear extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,11 +21,10 @@ class PostFormRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => ['required', 'min:10']
+            //
         ];
     }
 }
