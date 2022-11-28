@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PokerController;
+use App\Http\Controllers\PokerRequestController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ToDoRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +29,13 @@ Route::resource('posts', PostController::class)->except(
     ['index']
 )->middleware('auth');
 
-Route::resource('poker', PokerController::class)->except(
-    ['index']
-);
+//Route::resource('poker', PokerController::class);
 
 Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/todo-send', [ToDoRequestController::class, 'index'])->name('todo-list');
+Route::resource('todo', ToDoRequestController::class);
+//Route::resource('poker-request', PokerRequestController::class);
+Route::get('poker-request', [PokerRequestController::class, 'index'])->name('create-new-game')->middleware('auth');
+Route::post('poker-request', [PokerRequestController::class,'startNewGame'])->name('start-new-game')->middleware('auth');

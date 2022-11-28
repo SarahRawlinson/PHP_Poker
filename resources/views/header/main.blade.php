@@ -1,16 +1,9 @@
 ﻿<?php
 
+use App\Classes\Web_Data\PageAttributes;
 use Illuminate\Support\Facades\Auth;
 
-$PageLinks = [
-    ['link' => 'home', 'title' => 'Home', 'login_needed' => 0],
-    ['link' => 'about', 'title' => 'About', 'login_needed' => 0],
-    ['link' => 'posts.create', 'title' => 'Create Post', 'login_needed' => 1],
-    ['link' => 'poker.create', 'title' => 'Poker', 'login_needed' => 0],
-    ['link' => 'login', 'title' => 'Login', 'login_needed' => -1],
-    ['link' => 'register', 'title' => 'Register', 'login_needed' => -1],
-    ['link' => 'logout', 'title' => 'Logout', 'login_needed' => 1]
-];
+$PageLinks = PageAttributes::GetPageAttributes();
 $loggedIn = false;
 ?>
 
