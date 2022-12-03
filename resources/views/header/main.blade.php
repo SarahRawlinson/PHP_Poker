@@ -15,7 +15,7 @@ $loggedIn = false;
 
 {{--status--}}
 @if($loggedIn)
-    <div class="container">
+    <div class="container logged-in-status" id="header-main-logged-in-status">
         <div class="row">
             <h5 class="text-end">You are logged in as {{Auth::user()->name}}</h5>
         </div>
@@ -38,10 +38,12 @@ $loggedIn = false;
         </ul>
 
         {{--messages--}}
-        <div class="mb-5">
-            @includeWhen($errors->any(), 'messages._errors')
-            @includeWhen(session('success'), 'messages._success')
-            @includeWhen(session('deleted'), 'messages._item_deleted')
+        <div class="container messages" id="header-main-messages">
+            <div class="mb-5">
+                @includeWhen($errors->any(), 'messages._errors')
+                @includeWhen(session('success'), 'messages._success')
+                @includeWhen(session('deleted'), 'messages._item_deleted')
+            </div>
         </div>
     </div>
 </div>

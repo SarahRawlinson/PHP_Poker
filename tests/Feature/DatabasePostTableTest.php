@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
-class DatabaseTest extends TestCase
+class DatabasePostTableTest extends TestCase
 {
     use RefreshDatabase;
 

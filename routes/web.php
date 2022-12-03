@@ -39,3 +39,4 @@ Route::resource('todo', ToDoRequestController::class);
 //Route::resource('poker-request', PokerRequestController::class);
 Route::get('poker-request', [PokerRequestController::class, 'index'])->name('create-new-game')->middleware('auth');
 Route::post('poker-request', [PokerRequestController::class,'startNewGame'])->name('start-new-game')->middleware('auth');
+Route::post('poker-join-request', [PokerRequestController::class,'joinGame'])->name('join-game')->middleware('auth');

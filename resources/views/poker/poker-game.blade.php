@@ -58,10 +58,9 @@ function deal(Deck &$deck): ICard
         let head = $('head');
         head.append('<meta name="csrf-token" content="' + CSRF_TOKEN + '">');
         head.append('<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">');
-
         console.log(CSRF_TOKEN);
-
     });
 
 </script>
 <script src="{{asset('js/handleRequestPokerGame.js')}}"></script>
+<script src="{{asset('js/handleRequestJoinPokerGame.js')}}"></script>

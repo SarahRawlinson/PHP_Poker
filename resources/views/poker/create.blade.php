@@ -1,5 +1,8 @@
 
 @extends('layout')
+@section('meta')
+    @yield('meta-poker')
+@endsection
 @section('page name','Poker Home')
 @section('page title','Poker Home')
 @section('page content')

@@ -2,6 +2,7 @@
     "name": "poker",
     "version": "1.0.0",
     "dependencies": {
+        "ajax": "^0.0.4",
         "bootstrap": "^5.2.2",
         "jquery": "^3.6.1",
         "laravel-mix": "^6.0.49",

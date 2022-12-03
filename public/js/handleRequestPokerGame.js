@@ -42,7 +42,14 @@ $(document).ready(function($){
             dataType: 'json',
             success: function (data) {
 
-                console.log(data);
+                // console.log(data);
+                console.log(data['game'][0]['id']);
+                // console.log('created-game event created');
+                document.dispatchEvent(new CustomEvent("created-game", {
+                    detail: {
+                        number: data['game'][0]['id']
+                    }
+                }));
             },
             error: function (data) {
                 console.log(data);
