@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users_Connected_To_Poker_Games', static function (Blueprint $table) {
-            $table->unsignedBigInteger('poker_game_id');
+            $table->unsignedBigInteger('poker_game_id')->nullable();
         });
     }
 
