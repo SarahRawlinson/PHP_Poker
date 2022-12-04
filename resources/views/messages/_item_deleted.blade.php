@@ -1,3 +1,3 @@
-﻿<div class="flash-delete">
+﻿<div class="flash-alert">
     <b>{{session('deleted')}}</b>
 </div>

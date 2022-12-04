@@ -510,3 +510,4 @@ yarn-error.log
 .phpunit.result.cache
 
 /notes/
+test

@@ -10,7 +10,8 @@ class PageAttributes
         ['link' => 'login', 'title' => 'Login', 'login_needed' => -1],
         ['link' => 'register', 'title' => 'Register', 'login_needed' => -1],
         ['link' => 'logout', 'title' => 'Logout', 'login_needed' => 1],
-        ['link' => 'todo-list', 'title' => 'To Do', 'login_needed' => 1]
+        ['link' => 'todo-list', 'title' => 'To Do', 'login_needed' => 1],
+        ['link' => 'join-poker-game', 'title' => 'Join Game', 'login_needed' => 1]
     ];
     /**
      * @return array|string[][]

@@ -105,8 +105,14 @@ button {
     border-radius: 4px;
 }
 
-.flash-delete {
+.flash-alert {
     background-color: rgb(235, 85, 47);
+    color: white;
+    border-radius: 4px;
+}
+
+.flash-warning {
+    background-color: rgb(238, 94, 94);
     color: white;
     border-radius: 4px;
 }
