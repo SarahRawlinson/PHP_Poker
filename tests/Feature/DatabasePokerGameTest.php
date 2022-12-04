@@ -54,28 +54,43 @@ class DatabasePokerGameTest extends TestCase
 
     public function test_requests()
     {
-        $user = User::factory()->create([
+        $user1 = User::factory()->create([
+            'password' => Hash::make('abc123'),
+        ]);
+        $user2 = User::factory()->create([
             'password' => Hash::make('abc123'),
         ]);
 
         $this->post('/login', [
-            'email' => $user->email,
+            'email' => $user1->email,
             'password' => 'abc123'
         ]);
         $responseNewGame = $this
-            ->actingAs($user)
+            ->actingAs($user1)
             ->postJson(route('start-new-game'), [
                 'number' => '1'
             ]);
-        $responseJoinGame = $this
-            ->actingAs($user)
-            ->postJson(route('join-game'), [
-                'number' => '1',
-                'poker_game_id' => '1'
-            ]);
+        $id = $responseNewGame['game'][0]['id']; // 12345
+        $joinDetails = [
+            'number' => '1',
+            'poker_game_id' => $id
+        ];
+        $responseJoinGameUser1 = $this
+            ->actingAs($user1)
+            ->postJson(route('join-game'), $joinDetails);
+
+
+        $this->post('/login', [
+            'email' => $user2->email,
+            'password' => 'abc123'
+        ]);
+        $responseJoinGameUser2 = $this
+            ->actingAs($user2)
+            ->postJson(route('join-game'), $joinDetails);
 
         $this->assertAuthenticated();
         $this->assertDatabaseCount('poker_games',1);
+        $this->assertDatabaseCount('users_Connected_To_Poker_Games',2);
     }
 
 
