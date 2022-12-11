@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @method static create(array $data)
+ * @method static find($id)
  * @property mixed $user_id
  * @property mixed $id;
  */

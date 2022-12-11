@@ -23,6 +23,13 @@
                 <p>{{ $pokerGame->id }}</p>
                 <small class="row">posted by <b>{{$pokerGame->user->name}}</b></small>
                 <small class="row">time: <b>{{$pokerGame->updated_at}}</b></small>
+                @auth
+                    <a href="{{route('poker.show', [$pokerGame])}}">
+                        @endauth
+                        {{ $pokerGame->id }}
+                        @auth
+                    </a>
+                @endauth
             </div>
         @empty
             <p>There are no games yet</p>
