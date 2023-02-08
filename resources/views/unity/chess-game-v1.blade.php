@@ -1,0 +1,7 @@
+﻿@extends('unity.unity-loader')
+@section('width', '600px')
+@section('height', '300px')
+@section('build-folder','chess-v1')
+@section('file-name-structure', 'WebGL Build 3')
+@section('product-name', 'Chess')
+@section('product-version', '1')
